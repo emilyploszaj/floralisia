@@ -92,7 +92,7 @@ public class PoolCrafter {
 				}
 			}
 		}
-		Box box = new Box(new BlockPos(minX, pos.getY(), minZ), new BlockPos(minZ, pos.getY() + 1.0F, maxZ));
+		Box box = new Box(new BlockPos(minX, pos.getY(), minZ), new BlockPos(maxX, pos.getY() + 1.0F, maxZ));
 		List<ItemEntity> ingredients = world.getEntitiesByClass(ItemEntity.class, box, stack -> true);
 		outer: for (FloralisiaRecipe recipe : world.getRecipeManager().listAllOfType(FloralisiaRecipeType.POOL)) {
 			if (!flowers.containsAll(recipe.flowers)) {
