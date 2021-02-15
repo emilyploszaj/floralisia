@@ -1,0 +1,29 @@
+{
+    "name": "Anastasia",
+    "icon": "floralisia:anastasia",
+	"category": "flora",
+	"sortnum": 2,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "floralisia:anastasia",
+			"text": "The anastasia is a modest flower known for its resilience."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Anastasia",
+			"recipe": "floralisia:pool/anastasia"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_resilience"
+		},
+		{
+			"type": "crafting",
+			"headertext": "Green Dye",
+			"recipe": "floralisia:crafting/green_dye",
+			"text": "Anastasias can also be crafted into green dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}

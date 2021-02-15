@@ -1,0 +1,35 @@
+{
+    "name": "Cymbidium",
+    "icon": "floralisia:cymbidium",
+	"category": "flora",
+	"sortnum": 2,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "floralisia:cymbidium",
+			"text": "The cymbidium is a flower known for its affinity with even the poorest of soils."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Placeholder",
+			"recipe": "floralisia:pool/anastasia"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_earth"
+		},
+		{
+			"type": "spotlight",
+			"item": "floralisia:enchanted_grass",
+			"title": "Spreading",
+			"text": "The cymbidium, a flower closer to the earth than most, is encouraged to spread when on enchanted grass if stones are formed nearby from fluids. A novice floralist may struggle to find a way to dispose of, or even better, use the stones produced to their fullest."
+		},
+		{
+			"type": "crafting",
+			"headertext": "Lime Dye",
+			"recipe": "floralisia:crafting/brown_dye",
+			"text": "Cymbidiums can also be crafted into brown dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}

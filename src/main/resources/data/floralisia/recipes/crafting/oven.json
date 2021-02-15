@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"AAA",
+		"AFA",
+		"SSS"
+	],
+	"key": {
+		"A": {
+			"item": "minecraft:amethyst_shard"
+		},
+		"F": {
+			"item": "minecraft:furnace"
+		},
+		"S": {
+			"item": "minecraft:stone_slab"
+		}
+	},
+	"result": {
+		"item": "floralisia:oven",
+		"count": 1
+	}
+}

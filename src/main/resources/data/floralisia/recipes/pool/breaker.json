@@ -1,0 +1,40 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:dropper"
+		},
+		{
+			"item": "minecraft:iron_pickaxe"
+		},
+		{
+			"item": "minecraft:amethyst_shard"
+		},
+		{
+			"item": "floralisia:essence_of_destruction"
+		},
+		{
+			"item": "floralisia:essence_of_order"
+		},
+		{
+			"item": "floralisia:essence_of_earth"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:breaker"
+		}
+	],
+	"flowers": [
+		{
+			"block": "minecraft:orange_tulip"
+		},
+		{
+			"block": "minecraft:white_tulip"
+		},
+		{
+			"block": "floralisia:cymbidium"
+		}
+	],
+	"minimumflowers": 9
+}

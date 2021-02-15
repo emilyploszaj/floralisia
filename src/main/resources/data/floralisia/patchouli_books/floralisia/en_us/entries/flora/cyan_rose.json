@@ -2,7 +2,7 @@
     "name": "Cyan Rose",
     "icon": "floralisia:cyan_rose",
 	"category": "flora",
-	"sortnum": 0,
+	"sortnum": 2,
     "pages": [
 		{
 			"type": "spotlight",
@@ -15,15 +15,15 @@
 			"recipe": "floralisia:pool/cyan_rose"
 		},
 		{
-			"type": "spotlight",
-			"item": "floralisia:essence_of_transmutation",
-			"text": ""
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_transmutation"
 		},
 		{
 			"type": "crafting",
 			"headertext": "Cyan Dye",
 			"recipe": "floralisia:crafting/cyan_dye",
-			"text": "Cyan roses can also be crafted into cyan dye, providing a renewable source to a floralist with amethyst to spare."
+			"text": "Cyan roses can also be crafted into cyan dye, providing a renewable source to a floralist with a sharp mind."
 		}
     ]
 }

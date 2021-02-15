@@ -6,11 +6,19 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "Oven go brr"
+			"text": "While pool crafting offers a floralist a crude way to harness and focus the essences of the natural world, it is unrefined and untargeted. The types of flowers used in pool crafting are important, they offer different utilities, so the goal should be to distil the latent essence within a flower."
 		},
 		{
-			"type": "text",
-			"text": "recipe goes here"
+			"type": "crafting",
+			"recipe": "floralisia:crafting/oven",
+			"recipe2": "floralisia:crafting/unfired_clay_bottle",
+			"title": "Oven"
+		},
+		{
+			"type": "smelting",
+			"title": "Clay Bottle",
+			"recipe": "floralisia:smelting/clay_bottle",
+			"text": "The process is simple, clip the petals off of a flower, place them in the oven with clay bottles and finally be prepared to collect the fumes as the petals are burned to ash. These essences should come in handy making more complex magical creations."
 		},
 		{
 			"type": "oven_recipe",

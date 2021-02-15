@@ -1,0 +1,29 @@
+{
+    "name": "Gladiolus",
+    "icon": "floralisia:gladiolus",
+	"category": "flora",
+	"sortnum": 2,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "floralisia:gladiolus",
+			"text": "The gladiolus is a slim flower cultivated for its tendency to encourage growth."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Placeholder",
+			"recipe": "floralisia:pool/anastasia"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_growth"
+		},
+		{
+			"type": "crafting",
+			"headertext": "Lime Dye",
+			"recipe": "floralisia:crafting/lime_dye",
+			"text": "Gladioluses can also be crafted into lime dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}

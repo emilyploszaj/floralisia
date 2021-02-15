@@ -1,0 +1,30 @@
+{
+    "name": "Blue Orchid",
+    "icon": "minecraft:blue_orchid",
+	"category": "flora",
+	"sortnum": 0,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "minecraft:blue_orchid",
+			"text": "The blue orchid is a thirsty flower known for its attachment with water."
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_water"
+		},
+		{
+			"type": "spotlight",
+			"item": "floralisia:enchanted_grass",
+			"title": "Spreading",
+			"text": "The blue orchid is never satisfied and will dry even the most saturated soils. It is only logical then that it responds positively to being given water. It seems to be fond of being left out in the rain, or having a dripstone keep it wet, but responds best when splashed with a full bottle of water."
+		},
+		{
+			"type": "crafting",
+			"headertext": "Lime Dye",
+			"recipe": "minecraft:light_blue_dye_from_blue_orchid",
+			"text": "The blue orchid can also be crafted into light blue dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}

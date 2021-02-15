@@ -1,0 +1,16 @@
+{
+	"name": "Breaker",
+	"icon": "floralisia:breaker",
+	"category": "implements",
+	"pages": [
+		{
+			"type": "text",
+			"text": "I haven't written this page yet :("
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Breaker",
+			"recipe": "floralisia:pool/breaker"
+		}
+	]
+}

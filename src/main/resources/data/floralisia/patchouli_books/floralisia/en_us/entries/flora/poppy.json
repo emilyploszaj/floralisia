@@ -1,0 +1,30 @@
+{
+    "name": "Poppy",
+    "icon": "minecraft:poppy",
+	"category": "flora",
+	"sortnum": 0,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "minecraft:poppy",
+			"text": "The poppy is a flower seen thriving when others aren't in the blistering heat."
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_heat"
+		},
+		{
+			"type": "spotlight",
+			"item": "floralisia:enchanted_grass",
+			"title": "Spreading",
+			"text": "The poppy is always happy to be left in the heat. While nearby fire may slowly prove effective, the poppy craves to see the majesty of fire, that of flammable blocks being consumed by the inferno."
+		},
+		{
+			"type": "crafting",
+			"headertext": "Red Dye",
+			"recipe": "minecraft:red_dye_from_poppy",
+			"text": "The poppy can also be crafted into red dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}
