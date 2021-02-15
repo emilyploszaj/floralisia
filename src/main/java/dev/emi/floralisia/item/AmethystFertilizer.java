@@ -41,10 +41,11 @@ public class AmethystFertilizer extends Item {
 
 	@Override
 	public ActionResult useOnBlock(ItemUsageContext context) {
-		if (fertilize(context.getWorld(), context.getBlockPos(), context.getStack()))
+		if (fertilize(context.getWorld(), context.getBlockPos(), context.getStack())) {
 			return ActionResult.SUCCESS;
-		else
+		} else {
 			return ActionResult.FAIL;
+		}
 	}
 
 	public boolean fertilize(World world, BlockPos pos, ItemStack stack) {

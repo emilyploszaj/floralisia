@@ -31,7 +31,7 @@ public class VoidBag extends TrinketItem {
 			}
 			player.openHandledScreen(new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) -> {
 				return new VoidBagScreenHandler(i, playerInventory, slot, ScreenHandlerContext.create(world, player.getBlockPos()));
-			 }, TITLE));
+			}, TITLE));
 		}
 		return TypedActionResult.success(player.getStackInHand(hand));
 	}

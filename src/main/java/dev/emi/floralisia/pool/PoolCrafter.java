@@ -21,47 +21,54 @@ import net.minecraft.world.World;
 public class PoolCrafter {
 
 	public static boolean craft(World world, BlockPos pos) {
-		List<Block> flowers = new ArrayList<Block>();
-		if (world.getFluidState(pos).isEmpty())
+		List<Block> flowers = new ArrayList<>();
+		if (world.getFluidState(pos).isEmpty()) {
 			pos = pos.offset(Direction.DOWN);
+		}
 		int minX = pos.getX(), maxX = pos.getX(), minZ = pos.getZ(), maxZ = pos.getZ();
 		for (; maxX - minX < 8; minX--) {
-			if (world.getFluidState(new BlockPos(minX, pos.getY(), pos.getZ())).isEmpty())
+			if (world.getFluidState(new BlockPos(minX, pos.getY(), pos.getZ())).isEmpty()) {
 				break;
+			}
 		}
 		for (; maxX - minX < 8; maxX++) {
-			if (world.getFluidState(new BlockPos(maxX, pos.getY(), pos.getZ())).isEmpty())
+			if (world.getFluidState(new BlockPos(maxX, pos.getY(), pos.getZ())).isEmpty()) {
 				break;
+			}
 		}
 		for (; maxZ - minZ < 8; minZ--) {
-			if (world.getFluidState(new BlockPos(pos.getX(), pos.getY(), minZ)).isEmpty())
+			if (world.getFluidState(new BlockPos(pos.getX(), pos.getY(), minZ)).isEmpty()) {
 				break;
+			}
 		}
 		for (; maxZ - minZ < 8; maxZ++) {
-			if (world.getFluidState(new BlockPos(pos.getX(), pos.getY(), maxZ)).isEmpty())
+			if (world.getFluidState(new BlockPos(pos.getX(), pos.getY(), maxZ)).isEmpty()) {
 				break;
+			}
 		}
-		if (maxX == minX || maxZ == minZ)
+		if (maxX == minX || maxZ == minZ) {
 			return false;
+		}
 		for (int x = minX + 1; x < maxX; x++) {
 			for (int z = minZ + 1; z < maxZ; z++) {
-				if (!world.getFluidState(new BlockPos(x, pos.getY(), z)).isIn(FluidTags.WATER))
+				if (!world.getFluidState(new BlockPos(x, pos.getY(), z)).isIn(FluidTags.WATER)) {
 					return false;
+				}
 			}
 		}
 		for (int x = minX + 1; x < maxX; x++) {
 			Block block = world.getBlockState(new BlockPos(x, pos.getY() + 1, minZ)).getBlock();
-			if (!(block instanceof FlowerBlock))
+			if (!(block instanceof FlowerBlock)) {
 				return false;
-			else {
+			} else {
 				if (!flowers.contains(block)) {
 					flowers.add(block);
 				}
 			}
 			block = world.getBlockState(new BlockPos(x, pos.getY() + 1, maxZ)).getBlock();
-			if (!(block instanceof FlowerBlock))
+			if (!(block instanceof FlowerBlock)) {
 				return false;
-			else {
+			} else {
 				if (!flowers.contains(block)) {
 					flowers.add(block);
 				}
@@ -69,17 +76,17 @@ public class PoolCrafter {
 		}
 		for (int z = minZ + 1; z < maxZ; z++) {
 			Block block = world.getBlockState(new BlockPos(minX, pos.getY() + 1, z)).getBlock();
-			if (!(block instanceof FlowerBlock))
+			if (!(block instanceof FlowerBlock)) {
 				return false;
-			else {
+			} else {
 				if (!flowers.contains(block)) {
 					flowers.add(block);
 				}
 			}
 			block = world.getBlockState(new BlockPos(maxX, pos.getY() + 1, z)).getBlock();
-			if (!(block instanceof FlowerBlock))
+			if (!(block instanceof FlowerBlock)) {
 				return false;
-			else {
+			} else {
 				if (!flowers.contains(block)) {
 					flowers.add(block);
 				}
@@ -88,12 +95,14 @@ public class PoolCrafter {
 		Box box = new Box(new BlockPos(minX, pos.getY(), minZ), new BlockPos(minZ, pos.getY() + 1.0F, maxZ));
 		List<ItemEntity> ingredients = world.getEntitiesByClass(ItemEntity.class, box, stack -> true);
 		outer: for (FloralisiaRecipe recipe : world.getRecipeManager().listAllOfType(FloralisiaRecipeType.POOL)) {
-			if (!flowers.containsAll(recipe.flowers))
+			if (!flowers.containsAll(recipe.flowers)) {
 				continue;
-			if (flowers.size() < recipe.minimumFlowers)
+			}
+			if (flowers.size() < recipe.minimumFlowers) {
 				continue;
-			List<ItemEntity> used = new ArrayList<ItemEntity>();
-			List<Integer> usedCount = new ArrayList<Integer>();
+			}
+			List<ItemEntity> used = new ArrayList<>();
+			List<Integer> usedCount = new ArrayList<>();
 			mid: for (FloralisiaIngredient ingredient : recipe.ingredients) {
 				for (ItemEntity entity : ingredients) {
 					if (ingredient.test(entity.getStack())) {

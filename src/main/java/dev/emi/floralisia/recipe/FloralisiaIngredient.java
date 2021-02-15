@@ -1,5 +1,6 @@
 package dev.emi.floralisia.recipe;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -9,7 +10,6 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 import com.google.common.base.Predicate;
-import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -152,7 +152,7 @@ public class FloralisiaIngredient {
         }
   
         public Collection<ItemStack> getStacks() {
-            List<ItemStack> list = Lists.newArrayList();
+            List<ItemStack> list = new ArrayList<>();
             Iterator<Item> iterator = this.tag.values().iterator();
     
             while (iterator.hasNext()) {

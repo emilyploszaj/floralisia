@@ -1,5 +1,6 @@
 package dev.emi.floralisia.patchouli;
 
+import java.util.NoSuchElementException;
 import java.util.function.UnaryOperator;
 
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -27,7 +28,8 @@ public class OvenRecipeComponent implements ICustomComponent {
 	public void onVariablesAvailable(UnaryOperator<IVariable> lookup) {
 		//System.out.println("Loading recipe variable: " + lookup.apply(recipe));
 		MinecraftClient client = MinecraftClient.getInstance();
-		Recipe<?> rec = client.world.getRecipeManager().get(new Identifier(lookup.apply(recipe).asString())).orElseThrow();
+		Recipe<?> rec = client.world.getRecipeManager().get(new Identifier(lookup.apply(recipe).asString()))
+			.orElseThrow(() -> new NoSuchElementException());
 		if (rec instanceof FloralisiaRecipe) {
 			floralisiaRecipe = (FloralisiaRecipe) rec;
 		}

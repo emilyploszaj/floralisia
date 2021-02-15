@@ -19,7 +19,7 @@ public class FloralisiaRecipe implements Recipe<Inventory> {
 	public DefaultedList<Block> flowers = DefaultedList.of();
 	public int minimumFlowers = 0;
 
-    public FloralisiaRecipe(Identifier name, FloralisiaRecipeType<?> type, FloralisiaRecipeSerializer serializer) {
+    public FloralisiaRecipe(Identifier name, FloralisiaRecipeType<? extends FloralisiaRecipe> type, FloralisiaRecipeSerializer serializer) {
         this.name = name;
         this.type = type;
         this.serializer = serializer;

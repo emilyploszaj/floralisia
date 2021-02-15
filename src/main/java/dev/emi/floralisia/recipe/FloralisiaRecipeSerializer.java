@@ -2,6 +2,7 @@ package dev.emi.floralisia.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.mojang.datafixers.util.Function3;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.JsonOps;
 
@@ -20,20 +21,20 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.registry.Registry;
 
 public class FloralisiaRecipeSerializer implements RecipeSerializer<FloralisiaRecipe> {
-    public Class<? extends FloralisiaRecipe> c;
-    public FloralisiaRecipeType<? extends FloralisiaRecipe> type;
+	public Function3<Identifier, FloralisiaRecipeType<? extends FloralisiaRecipe>, FloralisiaRecipeSerializer, FloralisiaRecipe> constructor;
+	public FloralisiaRecipeType<? extends FloralisiaRecipe> type;
 
-    public FloralisiaRecipeSerializer(Class<? extends FloralisiaRecipe> c, FloralisiaRecipeType<? extends FloralisiaRecipe> type) {
-        this.c = c;
-        this.type = type;
-    }
+	public FloralisiaRecipeSerializer(Function3<Identifier, FloralisiaRecipeType<? extends FloralisiaRecipe>, FloralisiaRecipeSerializer,
+			FloralisiaRecipe> constructor, FloralisiaRecipeType<? extends FloralisiaRecipe> type) {
+		this.constructor = constructor;
+		this.type = type;
+	}
 
-    @Override
-    public FloralisiaRecipe read(Identifier name, JsonObject json) {
-        try {
-            FloralisiaRecipe recipe = c.getConstructor(Identifier.class, FloralisiaRecipeType.class, FloralisiaRecipeSerializer.class)
-                .newInstance(name, type, this);
-            recipe.ingredients = deserializeInput(JsonHelper.getArray(json, "ingredients"));
+	@Override
+	public FloralisiaRecipe read(Identifier name, JsonObject json) {
+		try {
+			FloralisiaRecipe recipe = constructor.apply(name, type, this);
+			recipe.ingredients = deserializeInput(JsonHelper.getArray(json, "ingredients"));
 			recipe.outputs = deserializeOutput(JsonHelper.getArray(json, "results"));
 			if (type == FloralisiaRecipeType.POOL) {
 				recipe.flowers = deserializeFlowers(JsonHelper.getArray(json, "flowers"));
@@ -43,65 +44,65 @@ public class FloralisiaRecipeSerializer implements RecipeSerializer<FloralisiaRe
 			//System.out.println(recipe.outputs.get(0));
 			//System.out.println(recipe.flowers.get(0));
 			//System.out.println(recipe.minimumFlowers);
-            return recipe;
+			return recipe;
 		} catch (Exception e) {
 			throw new RuntimeException("Failed to load recipe " + name, e);
 		}
-    }
+	}
 
-    @Override
-    public FloralisiaRecipe read(Identifier name, PacketByteBuf buf) {
-        return null;
-    }
+	@Override
+	public FloralisiaRecipe read(Identifier name, PacketByteBuf buf) {
+		return null;
+	}
 
-    @Override
-    public void write(PacketByteBuf buf, FloralisiaRecipe recipe) {
-    }
+	@Override
+	public void write(PacketByteBuf buf, FloralisiaRecipe recipe) {
+	}
 
-    public static DefaultedList<FloralisiaIngredient> deserializeInput(JsonArray array) {
-        DefaultedList<FloralisiaIngredient> ingredients = DefaultedList.of();
-        for (int i = 0; i < array.size(); i++) {
-            JsonObject json = array.get(i).getAsJsonObject();
-            FloralisiaIngredient ingredient = FloralisiaIngredient.fromJson(json);
-            ingredients.add(ingredient);
-        }
-        return ingredients;
-    }
+	public static DefaultedList<FloralisiaIngredient> deserializeInput(JsonArray array) {
+		DefaultedList<FloralisiaIngredient> ingredients = DefaultedList.of();
+		for (int i = 0; i < array.size(); i++) {
+			JsonObject json = array.get(i).getAsJsonObject();
+			FloralisiaIngredient ingredient = FloralisiaIngredient.fromJson(json);
+			ingredients.add(ingredient);
+		}
+		return ingredients;
+	}
 
-    public static DefaultedList<ItemStack> deserializeOutput(JsonArray array) {
-        DefaultedList<ItemStack> stacks = DefaultedList.of();
-        for (int i = 0; i < array.size(); i++) {
-            JsonObject json = array.get(i).getAsJsonObject();
-            Identifier identifier = new Identifier(JsonHelper.getString(json, "item"));
-            Item item = Registry.ITEM.get(identifier);
-            int count = 1;
-            if (item == Items.AIR) {
-                throw new IllegalStateException("Item does not exist");
-            }
-            if (json.has("count")) {
-                count = JsonHelper.getInt(json, "count");
-            }
-            
-            ItemStack stack = new ItemStack(item, count);
-            if (json.has("nbt")) {
-                stack.setTag((CompoundTag) Dynamic.convert(JsonOps.INSTANCE, NbtOps.INSTANCE, json.get("nbt")));
-            }
-            stacks.add(stack);
-        }
-        return stacks;
+	public static DefaultedList<ItemStack> deserializeOutput(JsonArray array) {
+		DefaultedList<ItemStack> stacks = DefaultedList.of();
+		for (int i = 0; i < array.size(); i++) {
+			JsonObject json = array.get(i).getAsJsonObject();
+			Identifier identifier = new Identifier(JsonHelper.getString(json, "item"));
+			Item item = Registry.ITEM.get(identifier);
+			int count = 1;
+			if (item == Items.AIR) {
+				throw new IllegalStateException("Item does not exist");
+			}
+			if (json.has("count")) {
+				count = JsonHelper.getInt(json, "count");
+			}
+			
+			ItemStack stack = new ItemStack(item, count);
+			if (json.has("nbt")) {
+				stack.setTag((CompoundTag) Dynamic.convert(JsonOps.INSTANCE, NbtOps.INSTANCE, json.get("nbt")));
+			}
+			stacks.add(stack);
+		}
+		return stacks;
 	}
 	
 	public static DefaultedList<Block> deserializeFlowers(JsonArray array) {
-        DefaultedList<Block> flowers = DefaultedList.of();
-        for (int i = 0; i < array.size(); i++) {
-            JsonObject json = array.get(i).getAsJsonObject();
+		DefaultedList<Block> flowers = DefaultedList.of();
+		for (int i = 0; i < array.size(); i++) {
+			JsonObject json = array.get(i).getAsJsonObject();
 			Identifier identifier = new Identifier(JsonHelper.getString(json, "block"));
 			Block block = Registry.BLOCK.get(identifier);
-            if (block == Blocks.AIR) {
-                throw new IllegalStateException("Block does not exist");
-            }
-            flowers.add(block);
-        }
-        return flowers;
-    }
+			if (block == Blocks.AIR) {
+				throw new IllegalStateException("Block does not exist");
+			}
+			flowers.add(block);
+		}
+		return flowers;
+	}
 }

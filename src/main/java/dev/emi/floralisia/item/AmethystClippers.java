@@ -26,11 +26,13 @@ public class AmethystClippers extends Item {
 
 			protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
 				World world = pointer.getWorld();
-				BlockPos pos = pointer.getBlockPos().offset((Direction) pointer.getBlockState().get(DispenserBlock.FACING));
+				BlockPos pos = pointer.getBlockPos()
+					.offset((Direction) pointer.getBlockState().get(DispenserBlock.FACING));
 				if (clip(world, pos, stack)) {
 					this.setSuccess(true);
 					if (world.isClient) {
-						world.playSound(pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.BLOCK_CROP_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+						world.playSound(pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F,
+							SoundEvents.BLOCK_CROP_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
 					}
 				} else {
 					this.setSuccess(false);
@@ -41,47 +43,48 @@ public class AmethystClippers extends Item {
 	}
 
 	@Override
-	public ActionResult useOnBlock(ItemUsageContext context){
-		if(clip(context.getWorld(), context.getBlockPos(), context.getStack())){
+	public ActionResult useOnBlock(ItemUsageContext context) {
+		if (clip(context.getWorld(), context.getBlockPos(), context.getStack())) {
 			context.getPlayer().playSound(SoundEvents.BLOCK_CROP_BREAK, 1.0F, 1.0F);
 			return ActionResult.SUCCESS;
-		}else{
+		} else {
 			return ActionResult.FAIL;
 		}
 	}
-	public boolean clip(World world, BlockPos pos, ItemStack stack){
+
+	public boolean clip(World world, BlockPos pos, ItemStack stack) {
 		BlockState state = world.getBlockState(pos);
 		Item drop;
-		if(state.getBlock() == Blocks.DANDELION){
+		if (state.getBlock() == Blocks.DANDELION) {
 			drop = FloralisiaItems.DANDELION_PETALS;
-		}else if(state.getBlock() == Blocks.POPPY){
+		} else if (state.getBlock() == Blocks.POPPY) {
 			drop = FloralisiaItems.POPPY_PETALS;
-		}else if(state.getBlock() == Blocks.BLUE_ORCHID){
+		} else if (state.getBlock() == Blocks.BLUE_ORCHID) {
 			drop = FloralisiaItems.BLUE_ORCHID_PETALS;
-		}else if(state.getBlock() == Blocks.ALLIUM){
+		} else if (state.getBlock() == Blocks.ALLIUM) {
 			drop = FloralisiaItems.ALLIUM_PETALS;
-		}else if(state.getBlock() == Blocks.AZURE_BLUET){
+		} else if (state.getBlock() == Blocks.AZURE_BLUET) {
 			drop = FloralisiaItems.AZURE_BLUET_PETALS;
-		}else if(state.getBlock() == Blocks.RED_TULIP){
+		} else if (state.getBlock() == Blocks.RED_TULIP) {
 			drop = FloralisiaItems.RED_TULIP_PETALS;
-		}else if(state.getBlock() == Blocks.ORANGE_TULIP){
+		} else if (state.getBlock() == Blocks.ORANGE_TULIP) {
 			drop = FloralisiaItems.ORANGE_TULIP_PETALS;
-		}else if(state.getBlock() == Blocks.WHITE_TULIP){
+		} else if (state.getBlock() == Blocks.WHITE_TULIP) {
 			drop = FloralisiaItems.WHITE_TULIP_PETALS;
-		}else if(state.getBlock() == Blocks.PINK_TULIP){
+		} else if (state.getBlock() == Blocks.PINK_TULIP) {
 			drop = FloralisiaItems.PINK_TULIP_PETALS;
-		}else if(state.getBlock() == Blocks.OXEYE_DAISY){
+		} else if (state.getBlock() == Blocks.OXEYE_DAISY) {
 			drop = FloralisiaItems.OXEYE_DAISY_PETALS;
-		}else if(state.getBlock() == Blocks.CORNFLOWER){
+		} else if (state.getBlock() == Blocks.CORNFLOWER) {
 			drop = FloralisiaItems.CORNFLOWER_PETALS;
-		}else if(state.getBlock() == Blocks.LILY_OF_THE_VALLEY){
+		} else if (state.getBlock() == Blocks.LILY_OF_THE_VALLEY) {
 			drop = FloralisiaItems.LILY_OF_THE_VALLEY_PETALS;
-		}else if(state.getBlock() == Blocks.WITHER_ROSE){
+		} else if (state.getBlock() == Blocks.WITHER_ROSE) {
 			drop = FloralisiaItems.WITHER_ROSE_PETALS;
-		}else{
+		} else {
 			return false;
 		}
-		if(!world.isClient){
+		if (!world.isClient) {
 			world.setBlockState(pos, Blocks.AIR.getDefaultState());
 			Block.dropStack(world, pos, new ItemStack(drop));
 			stack.damage(1, world.getRandom(), null);
