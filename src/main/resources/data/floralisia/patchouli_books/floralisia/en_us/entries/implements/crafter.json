@@ -1,0 +1,16 @@
+{
+	"name": "Crafter",
+	"icon": "floralisia:crafter",
+	"category": "implements",
+	"pages": [
+		{
+			"type": "text",
+			"text": "I haven't written this page yet :("
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Crafter",
+			"recipe": "floralisia:pool/crafter"
+		}
+	]
+}

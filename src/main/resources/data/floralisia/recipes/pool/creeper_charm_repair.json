@@ -1,0 +1,34 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "floralisia:creeper_charm"
+		},
+		{
+			"item": "floralisia:essence_of_order"
+		},
+		{
+			"item": "floralisia:essence_of_resilience"
+		},
+		{
+			"item": "floralisia:essence_of_stability"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:creeper_charm"
+		}
+	],
+	"flowers": [
+		{
+			"block": "minecraft:white_tulip"
+		},
+		{
+			"block": "minecraft:cornflower"
+		},
+		{
+			"block": "minecraft:lily_of_the_valley"
+		}
+	],
+	"minimumflowers": 8
+}

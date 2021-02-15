@@ -1,0 +1,29 @@
+{
+	"name": "Ring of Safeguarding",
+	"icon": "floralisia:ring_of_safeguarding",
+	"category": "implements",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Sometimes a floralist has passion for things that aren't natural magic, and that's fine. But, unlike natural magic, humans can and will break. This is a devastating prospect for many, few wouldn't take an arrow for their partner in a time of need. But that's a fantasy situation that can't be applied in real life. Unless it can? The ring of safeguarding is the answer."
+		},
+		{
+			"type": "spotlight",
+			"item": "floralisia:ring_of_safeguarding",
+			"text": "When bound to another, the ring of safeguarding can be worn to protect that person from fatal harm, at a price. The ring can sense when the bound person is in mortal peril and, using the powerful bond shared by the two, will transfer a portion of the wearer's life force to the one in need."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Ring of Safeguarding",
+			"recipe": "floralisia:pool/ring_of_safeguarding"
+		},
+		{
+			"type": "text",
+			"text": "The cost of saving another is dire however. In addition to losing life force, the wearer will also be unable to regain their strength for a considerable period of time. While this is happening, the ring cannot be removed as the process of transmitting life force bind it to the wearer's skin. However, this binding does not prevent the ring from functioning. The ring can be generous to a fault though, siphoning more and more life force away if needed from"
+		},
+		{
+			"type": "text",
+			"text": "the wearer. To an exceptionally weak owner, this can be fatal. However, many are willing to pay that price to save another."
+		}
+	]
+}

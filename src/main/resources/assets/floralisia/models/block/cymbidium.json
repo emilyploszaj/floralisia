@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "particle": "floralisia:block/cymbidium",
+        "cross": "floralisia:block/cymbidium"
+    }
+}

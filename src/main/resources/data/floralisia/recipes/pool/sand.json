@@ -1,0 +1,30 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:gravel",
+			"count": 24
+		},
+		{
+			"item": "floralisia:essence_of_transmutation"
+		},
+		{
+			"item": "floralisia:essence_of_destruction"
+		},
+		{
+			"item": "floralisia:essence_of_heat"
+		}
+	],
+	"results": [
+		{
+			"item": "minecraft:sand",
+			"count": 24
+		}
+	],
+	"flowers": [
+		{
+			"block": "floralisia:cyan_rose"
+		}
+	],
+	"minimumflowers": 5
+}

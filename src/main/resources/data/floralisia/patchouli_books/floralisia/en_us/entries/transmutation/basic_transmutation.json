@@ -1,0 +1,27 @@
+{
+    "name": "Basic Transmutation",
+    "icon": "minecraft:cobblestone",
+	"category": "transmutation",
+	"sortnum": 0,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "floralisia:cyan_rose",
+			"text": "The cyan rose, and its processed form, the essence of transmutation, are fundamental tools that let a floralist expand their access to various resources. The best starting point for learning about transmutation is the refinement of cobblestone, an abundant resource, into resources that are more scarce."
+		},
+		{
+			"type": "text",
+			"text": "The obvious target would be gravel and sand. These resources are fundamental for anyone, and a skilled floralist can produce them in abundance."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Gravel",
+			"recipe": "floralisia:pool/gravel"
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Sand",
+			"recipe": "floralisia:pool/sand"
+		}
+    ]
+}

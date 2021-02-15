@@ -1,0 +1,22 @@
+{
+	"components": [
+		{
+			"type": "header",
+			"text": "#headertext",
+			"x": -1,
+			"y": -1
+		},
+		{
+			"type": "separator",
+			"x": -1,
+			"y": -1
+		},
+		{
+			"type": "custom",
+			"class": "dev.emi.floralisia.patchouli.PoolRecipeComponent",
+			"recipe": "#recipe",
+			"x": 10,
+			"y": 40
+		}
+	]
+}

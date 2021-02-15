@@ -1,0 +1,28 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:blaze_powder"
+		},
+		{
+			"item": "floralisia:wither_rose_petals"
+		},
+		{
+			"item": "floralisia:blue_orchid_petals"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:dust_of_wilting"
+		}
+	],
+	"flowers": [
+		{
+			"block": "minecraft:wither_rose"
+		},
+		{
+			"block": "minecraft:white_tulip"
+		}
+	],
+	"minimumflowers": 6
+}

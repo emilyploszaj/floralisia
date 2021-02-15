@@ -1,0 +1,34 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:crafting_table"
+		},
+		{
+			"item": "minecraft:amethyst_shard"
+		},
+		{
+			"item": "floralisia:essence_of_fabrication"
+		},
+		{
+			"item": "floralisia:essence_of_order"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:crafter"
+		}
+	],
+	"flowers": [
+		{
+			"block": "minecraft:orange_tulip"
+		},
+		{
+			"block": "minecraft:white_tulip"
+		},
+		{
+			"block": "minecraft:lily_of_the_valley"
+		}
+	],
+	"minimumflowers": 8
+}

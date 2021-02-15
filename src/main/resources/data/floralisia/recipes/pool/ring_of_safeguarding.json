@@ -1,0 +1,37 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:gold_ingot"
+		},
+		{
+			"item": "minecraft:amethyst_shard"
+		},
+		{
+			"item": "floralisia:essence_of_attachment"
+		},
+		{
+			"item": "floralisia:essence_of_purity"
+		},
+		{
+			"item": "floralisia:essence_of_fabrication"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:ring_of_safeguarding"
+		}
+	],
+	"flowers": [
+		{
+			"block": "minecraft:allium"
+		},
+		{
+			"block": "minecraft:white_tulip"
+		},
+		{
+			"block": "floralisia:gladiolus"
+		}
+	],
+	"minimumflowers": 9
+}

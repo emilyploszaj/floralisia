@@ -1,0 +1,22 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:bone_meal"
+		},
+		{
+			"item": "minecraft:amethyst_shard"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:amethyst_fertilizer"
+		}
+	],
+	"flowers": [
+		{
+			"block": "minecraft:dandelion"
+		}
+	],
+	"minimumflowers": 2
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "particle": "floralisia:block/gladiolus",
+        "cross": "floralisia:block/gladiolus"
+    }
+}

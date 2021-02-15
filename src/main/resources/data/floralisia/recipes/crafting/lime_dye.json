@@ -1,0 +1,11 @@
+{
+	"type": "crafting_shapeless",
+	"ingredients":[
+		{
+			"item": "floralisia:gladiolus"
+		}
+	],
+	"result": {
+		"item": "minecraft:lime_dye"
+	}
+}

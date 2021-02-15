@@ -1,0 +1,30 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:sand",
+			"count": 8
+		},
+		{
+			"item": "floralisia:essence_of_transmutation"
+		},
+		{
+			"item": "floralisia:essence_of_purity"
+		},
+		{
+			"item": "floralisia:essence_of_water"
+		}
+	],
+	"results": [
+		{
+			"item": "minecraft:clay",
+			"count": 8
+		}
+	],
+	"flowers": [
+		{
+			"block": "floralisia:cyan_rose"
+		}
+	],
+	"minimumflowers": 5
+}

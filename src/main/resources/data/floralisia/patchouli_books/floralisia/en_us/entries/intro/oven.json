@@ -1,0 +1,75 @@
+{
+	"name": "Oven",
+	"icon": "floralisia:oven",
+	"category": "intro",
+	"sortnum": 6,
+	"pages": [
+		{
+			"type": "text",
+			"text": "Oven go brr"
+		},
+		{
+			"type": "text",
+			"text": "recipe goes here"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_arcana",
+			"recipe2": "floralisia:oven/essence_of_attachment"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_chaos",
+			"recipe2": "floralisia:oven/essence_of_destruction"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_earth",
+			"recipe2": "floralisia:oven/essence_of_fabrication"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_growth",
+			"recipe2": "floralisia:oven/essence_of_heat"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_heat2",
+			"recipe2": "floralisia:oven/essence_of_levity"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_light",
+			"recipe2": "floralisia:oven/essence_of_order"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_order2",
+			"recipe2": "floralisia:oven/essence_of_order3"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_purity",
+			"recipe2": "floralisia:oven/essence_of_resilience"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_stability",
+			"recipe2": "floralisia:oven/essence_of_transmutation"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipes",
+			"recipe": "floralisia:oven/essence_of_water"
+		}
+	]
+}

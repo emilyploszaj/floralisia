@@ -1,0 +1,40 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:grass_block"
+		},
+		{
+			"item": "minecraft:amethyst_shard"
+		},
+		{
+			"item": "floralisia:essence_of_transmutation"
+		},
+		{
+			"item": "floralisia:essence_of_growth"
+		},
+		{
+			"item": "floralisia:essence_of_earth"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:enchanted_grass"
+		}
+	],
+	"flowers": [
+		{
+			"block": "floralisia:cyan_rose"
+		},
+		{
+			"block": "floralisia:gladiolus"
+		},
+		{
+			"block": "minecraft:lily_of_the_valley"
+		},
+		{
+			"block": "minecraft:blue_orchid"
+		}
+	],
+	"minimumflowers": 10
+}

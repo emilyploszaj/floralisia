@@ -1,0 +1,29 @@
+{
+    "name": "Cyan Rose",
+    "icon": "floralisia:cyan_rose",
+	"category": "flora",
+	"sortnum": 0,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "floralisia:cyan_rose",
+			"text": "The cyan rose is flower renound for its applications in alchemy."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Cyan Rose",
+			"recipe": "floralisia:pool/cyan_rose"
+		},
+		{
+			"type": "spotlight",
+			"item": "floralisia:essence_of_transmutation",
+			"text": ""
+		},
+		{
+			"type": "crafting",
+			"headertext": "Cyan Dye",
+			"recipe": "floralisia:crafting/cyan_dye",
+			"text": "Cyan roses can also be crafted into cyan dye, providing a renewable source to a floralist with amethyst to spare."
+		}
+    ]
+}

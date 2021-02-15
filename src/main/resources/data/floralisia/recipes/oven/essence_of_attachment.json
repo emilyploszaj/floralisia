@@ -1,0 +1,19 @@
+{
+	"type": "floralisia:oven",
+	"ingredients":[
+		{
+			"item": "floralisia:allium_petals"
+		},
+		{
+			"item": "floralisia:clay_bottle"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:petal_ash"
+		},
+		{
+			"item": "floralisia:essence_of_attachment"
+		}
+	]
+}

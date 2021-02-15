@@ -1,0 +1,27 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:cobblestone",
+			"count": 32
+		},
+		{
+			"item": "floralisia:essence_of_transmutation"
+		},
+		{
+			"item": "floralisia:essence_of_destruction"
+		}
+	],
+	"results": [
+		{
+			"item": "minecraft:gravel",
+			"count": 32
+		}
+	],
+	"flowers": [
+		{
+			"block": "floralisia:cyan_rose"
+		}
+	],
+	"minimumflowers": 3
+}

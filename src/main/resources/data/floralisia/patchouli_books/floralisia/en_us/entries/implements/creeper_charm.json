@@ -1,0 +1,24 @@
+{
+	"name": "Creeper Charm",
+	"icon": "floralisia:creeper_charm",
+	"category": "implements",
+	"pages": [
+		{
+			"type": "text",
+			"text": "A garden will succumb to chaos in the face of neglict, but a quicker fall from grace is an explosion. Despite the best efforts of floralists everywhere, creepers have wandered in and left their mark time and time again. But luckily, there's a solution. By wearing a clay totem on one's neck infused with Dew, the necklace can consume all of the energy of the explosion."
+		},
+		{
+			"type": "text",
+			"text": "Placeholder"
+		},
+		{
+			"type": "text",
+			"text": "Unfortunately, given its nature, these charms are fragile and will shatter after consuming a single blast. But, fortunately, they can be repaired with a bit of essence."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Creeper Charm Repair",
+			"recipe": "floralisia:pool/creeper_charm_repair"
+		}
+	]
+}

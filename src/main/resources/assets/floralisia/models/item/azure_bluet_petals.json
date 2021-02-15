@@ -1,0 +1,6 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "floralisia:item/azure_bluet_petals"
+	}
+}

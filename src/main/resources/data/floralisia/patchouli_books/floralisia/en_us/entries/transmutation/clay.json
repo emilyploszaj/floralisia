@@ -1,0 +1,18 @@
+{
+    "name": "Clay",
+    "icon": "minecraft:clay",
+	"category": "transmutation",
+	"sortnum": 5,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "minecraft:clay_ball",
+			"text": "Clay is a userful resource for floralists around the world. Some decry its magical balance, but there is no doubt it possesses an important role for construction of intricate magical artifice. But the world's not made of clay. So alchemy comes to the rescue once again."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Clay",
+			"recipe": "floralisia:pool/clay"
+		}
+    ]
+}

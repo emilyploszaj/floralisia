@@ -1,0 +1,11 @@
+{
+	"type": "crafting_shapeless",
+	"ingredients":[
+		{
+			"item": "floralisia:anastasia"
+		}
+	],
+	"result": {
+		"item": "minecraft:green_dye"
+	}
+}

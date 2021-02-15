@@ -1,0 +1,25 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:shears"
+		},
+		{
+			"item": "minecraft:amethyst_shard"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:amethyst_clippers"
+		}
+	],
+	"flowers": [
+		{
+			"block": "minecraft:poppy"
+		},
+		{
+			"block": "minecraft:cornflower"
+		}
+	],
+	"minimumflowers": 4
+}

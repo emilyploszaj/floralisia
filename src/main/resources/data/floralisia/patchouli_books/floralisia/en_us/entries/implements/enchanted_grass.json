@@ -1,0 +1,16 @@
+{
+	"name": "Enchanted Grass",
+	"icon": "floralisia:enchanted_grass",
+	"category": "implements",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Petal demands cause one's amethyst supply to run dry quickly. It'd be convenient if you could construct something more permanent for cultivating more flowers. Fortunately, you can. By imbuing grass with the focal powers of amethyst and some essence, you can produce a soil that is extremely conductive for spreading local flower growth."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Enchanted Grass",
+			"recipe": "floralisia:pool/enchanted_grass"
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"name": "Dust of Wilting",
+	"icon": "floralisia:dust_of_wilting",
+	"category": "implements",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Plants are unpredictable and exciting, but sometimes you don't want that. Too many times can a neglected patch of vines consume your abode. The solution is simple: halt the plant's growth cycle. The Dust of Wilting does just that, placing affected plants in a stasis of sorts, not dead, but not growing."
+		},
+		{
+			"type": "text",
+			"text": "As it turns out, this has a multitude of uses, and many decorative paths reveal themselves when you hold the targeted power to seemingly freeze time."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Dust of Wilting",
+			"recipe": "floralisia:pool/dust_of_wilting"
+		}
+	]
+}

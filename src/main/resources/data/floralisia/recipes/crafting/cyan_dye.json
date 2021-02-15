@@ -1,0 +1,11 @@
+{
+	"type": "crafting_shapeless",
+	"ingredients":[
+		{
+			"item": "floralisia:cyan_rose"
+		}
+	],
+	"result": {
+		"item": "minecraft:cyan_dye"
+	}
+}

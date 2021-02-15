@@ -1,0 +1,17 @@
+{
+	"name": "Fundamentals",
+	"icon": "minecraft:allium",
+	"category": "intro",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "text",
+			"text": "Flowers have long stood out amoung the rest of nature, many credit their beauty, but that is simply a side effect of their latent capabilities. These specimens of nature are remarkable for their great ability to accumulate, distribute, focus, and direct the magical energy known as Dew."
+		},
+		{
+			"type": "spotlight",
+			"item": "minecraft:amethyst_shard",
+			"text": "Another material required for interfacing with flora is a purple gem known as the amethyst. Amethysts are located in dense geodes underground and grow slowly over time. Any serious application of magic will need a steady source of amethysts for their useful implements and potency."
+		}
+	]
+}

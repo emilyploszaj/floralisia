@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "package": "dev.emi.floralisia.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+	  "PlayerInventoryMixin",
+	  "WiltMixin",
+	  "CreeperEntityMixin",
+	  "EnchantmentTargetBreakableMixin",
+	  "ItemModBookMixin",
+	  "PlantBlockMixin",
+	  "BuddingAmethystBlockMixin",
+	  "LivingEntityMixin",
+	  "PotionEntityMixin",
+	  "FluidBlockMixin",
+	  "LavaFluidMixin",
+	  "FireBlockMixin"
+  ],
+  "client": [
+	"ClientPlayNetworkHandlerMixin",
+	"FixPatchouli",
+	"FixPatchouli2"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

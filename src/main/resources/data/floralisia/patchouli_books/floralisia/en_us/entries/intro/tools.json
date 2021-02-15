@@ -1,0 +1,26 @@
+{
+	"name": "Tools of the Trade",
+	"icon": "floralisia:amethyst_clippers",
+	"category": "intro",
+	"sortnum": 4,
+	"pages": [
+		{
+			"type": "text",
+			"text": "In pursuit of harnessing Dew, one must be adequately armed with the proper tools. One of those such tools is amethyst clippers. Pruning shrubs may be productive for some, but their true use lies in providing the ability to delicately remove the petals from various flowers. Petals are an irreplacably important material for all who wander the magical path."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Amethyst Clippers",
+			"recipe": "floralisia:pool/amethyst_clippers"
+		},
+		{
+			"type": "text",
+			"text": "Continuing with its usefulness, amethyst can also be used to create a magical fertilizer. This fertilizer, when applied to a flower, will cause a new one to sprout up nearby. This is useful for making sure you never run out of certain types of petals and essences."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Amethyst Fertilizer",
+			"recipe": "floralisia:pool/amethyst_fertilizer"
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"type": "floralisia:oven",
+	"ingredients":[
+		{
+			"item": "floralisia:blue_orchid_petals"
+		},
+		{
+			"item": "floralisia:clay_bottle"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:petal_ash"
+		},
+		{
+			"item": "floralisia:essence_of_water"
+		}
+	]
+}

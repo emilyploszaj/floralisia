@@ -1,0 +1,54 @@
+{
+	"name": "Pool Crafting",
+	"icon": "minecraft:water_bucket",
+	"category": "intro",
+	"sortnum": 2,
+	"pages": [
+		{
+			"type": "text",
+			"text": "Pool crafting is the method by which one can infuse ingredients with the essence of catalyst flowers and combine ingredients into more magical products."
+		},
+		{
+			"type": "text",
+			"text": "The basic construction used for pool crafting is a rectangle of water sources surrounded on all sides by flowers. A pool can be as small as 1x1 and as large as 7x7. Pool crafting recipes require a number of things to work. Firstly, every recipe requires certain flowers be present in the construction. Secondly, recipes will require a number of unique flowers to be present. Finally, recipes also require their ingredients be placed into the water of the pool."
+		},
+		{
+			"type": "text",
+			"text": "To activate pool crafting, an amethyst starter must be used, either manually or in a dispenser, into the water of the pool. The pool will consume its ingredients and, after a breif flourish, the pool will spit out its product into the air."
+		},
+		{
+			"type": "crafting",
+			"recipe": "floralisia:crafting/amethyst_starter",
+			"title": "Amethyst Starter"
+		},
+		{
+			"type": "multiblock",
+			"name": "Pool Crafting",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[
+						" FFF ",
+						"F   F",
+						"F 0 F",
+						"F   F",
+						" FFF "
+					],
+					[
+						" GGG ",
+						"GWWWG",
+						"GWWWG",
+						"GWWWG",
+						" GGG "
+					]
+				],
+				"mapping": {
+					"G": "minecraft:grass_block",
+					"F": "#minecraft:small_flowers",
+					"W": "minecraft:water"
+				},
+				"offset": [0, 0, 1]
+			}
+		}
+	]
+}

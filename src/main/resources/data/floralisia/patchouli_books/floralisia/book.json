@@ -1,0 +1,10 @@
+{
+	"name": "Floralisia",
+	"landing_text": "A guide to floral magic",
+	"version": 1,
+	"book_texture": "patchouli:textures/gui/book_cyan.png",
+	"model": "patchouli:book_cyan",
+	"show_progress": false,
+	"dont_generate_book": true,
+	"custom_book_item": "floralisia:guide_book"
+}

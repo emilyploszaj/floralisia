@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "floralisia",
+  "version": "1.0.0",
+
+  "name": "Floralisia",
+  "description": "Floral magic",
+  "authors": [
+    "Emi"
+  ],
+  "contact": {
+    "homepage": "https://emi.dev/",
+    "sources": "https://github.com/emilyploszaj/floralisia"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/floralisia/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.emi.floralisia.FloralisiaMain"
+	],
+	"client": [
+	  "dev.emi.floralisia.FloralisiaClient"
+	]
+  },
+  "mixins": [
+    "floralisia.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

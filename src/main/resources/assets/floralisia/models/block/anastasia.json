@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "particle": "floralisia:block/anastasia",
+        "cross": "floralisia:block/anastasia"
+    }
+}
