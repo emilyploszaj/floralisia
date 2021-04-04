@@ -1,0 +1,184 @@
+{
+	"variants": {
+		"binary=false,facing=east,powered=false,output_direction=0": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 270
+		},
+		"binary=false,facing=east,powered=false,output_direction=1": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 270
+		},
+		"binary=false,facing=east,powered=false,output_direction=2": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 270
+		},
+		"binary=false,facing=east,powered=true,output_direction=0": {
+			"model": "floralisia:block/randomizer_on_left",
+			"y": 270
+		},
+		"binary=false,facing=east,powered=true,output_direction=1": {
+			"model": "floralisia:block/randomizer_on_forward",
+			"y": 270
+		},
+		"binary=false,facing=east,powered=true,output_direction=2": {
+			"model": "floralisia:block/randomizer_on_right",
+			"y": 270
+		},
+		"binary=false,facing=north,powered=false,output_direction=0": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 180
+		},
+		"binary=false,facing=north,powered=false,output_direction=1": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 180
+		},
+		"binary=false,facing=north,powered=false,output_direction=2": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 180
+		},
+		"binary=false,facing=north,powered=true,output_direction=0": {
+			"model": "floralisia:block/randomizer_on_left",
+			"y": 180
+		},
+		"binary=false,facing=north,powered=true,output_direction=1": {
+			"model": "floralisia:block/randomizer_on_forward",
+			"y": 180
+		},
+		"binary=false,facing=north,powered=true,output_direction=2": {
+			"model": "floralisia:block/randomizer_on_right",
+			"y": 180
+		},
+		"binary=false,facing=south,powered=false,output_direction=0": {
+			"model": "floralisia:block/randomizer_off"
+		},
+		"binary=false,facing=south,powered=false,output_direction=1": {
+			"model": "floralisia:block/randomizer_off"
+		},
+		"binary=false,facing=south,powered=false,output_direction=2": {
+			"model": "floralisia:block/randomizer_off"
+		},
+		"binary=false,facing=south,powered=true,output_direction=0": {
+			"model": "floralisia:block/randomizer_on_left"
+		},
+		"binary=false,facing=south,powered=true,output_direction=1": {
+			"model": "floralisia:block/randomizer_on_forward"
+		},
+		"binary=false,facing=south,powered=true,output_direction=2": {
+			"model": "floralisia:block/randomizer_on_right"
+		},
+		"binary=false,facing=west,powered=false,output_direction=0": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 90
+		},
+		"binary=false,facing=west,powered=false,output_direction=1": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 90
+		},
+		"binary=false,facing=west,powered=false,output_direction=2": {
+			"model": "floralisia:block/randomizer_off",
+			"y": 90
+		},
+		"binary=false,facing=west,powered=true,output_direction=0": {
+			"model": "floralisia:block/randomizer_on_left",
+			"y": 90
+		},
+		"binary=false,facing=west,powered=true,output_direction=1": {
+			"model": "floralisia:block/randomizer_on_forward",
+			"y": 90
+		},
+		"binary=false,facing=west,powered=true,output_direction=2": {
+			"model": "floralisia:block/randomizer_on_right",
+			"y": 90
+		},
+		"binary=true,facing=east,powered=false,output_direction=0": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 270
+		},
+		"binary=true,facing=east,powered=false,output_direction=1": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 270
+		},
+		"binary=true,facing=east,powered=false,output_direction=2": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 270
+		},
+		"binary=true,facing=east,powered=true,output_direction=0": {
+			"model": "floralisia:block/randomizer_on_left_binary",
+			"y": 270
+		},
+		"binary=true,facing=east,powered=true,output_direction=1": {
+			"model": "floralisia:block/randomizer_on_forward_binary",
+			"y": 270
+		},
+		"binary=true,facing=east,powered=true,output_direction=2": {
+			"model": "floralisia:block/randomizer_on_right_binary",
+			"y": 270
+		},
+		"binary=true,facing=north,powered=false,output_direction=0": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 180
+		},
+		"binary=true,facing=north,powered=false,output_direction=1": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 180
+		},
+		"binary=true,facing=north,powered=false,output_direction=2": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 180
+		},
+		"binary=true,facing=north,powered=true,output_direction=0": {
+			"model": "floralisia:block/randomizer_on_left_binary",
+			"y": 180
+		},
+		"binary=true,facing=north,powered=true,output_direction=1": {
+			"model": "floralisia:block/randomizer_on_forward_binary",
+			"y": 180
+		},
+		"binary=true,facing=north,powered=true,output_direction=2": {
+			"model": "floralisia:block/randomizer_on_right_binary",
+			"y": 180
+		},
+		"binary=true,facing=south,powered=false,output_direction=0": {
+			"model": "floralisia:block/randomizer_off_binary"
+		},
+		"binary=true,facing=south,powered=false,output_direction=1": {
+			"model": "floralisia:block/randomizer_off_binary"
+		},
+		"binary=true,facing=south,powered=false,output_direction=2": {
+			"model": "floralisia:block/randomizer_off_binary"
+		},
+		"binary=true,facing=south,powered=true,output_direction=0": {
+			"model": "floralisia:block/randomizer_on_left_binary"
+		},
+		"binary=true,facing=south,powered=true,output_direction=1": {
+			"model": "floralisia:block/randomizer_on_forward_binary"
+		},
+		"binary=true,facing=south,powered=true,output_direction=2": {
+			"model": "floralisia:block/randomizer_on_right_binary"
+		},
+		"binary=true,facing=west,powered=false,output_direction=0": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 90
+		},
+		"binary=true,facing=west,powered=false,output_direction=1": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 90
+		},
+		"binary=true,facing=west,powered=false,output_direction=2": {
+			"model": "floralisia:block/randomizer_off_binary",
+			"y": 90
+		},
+		"binary=true,facing=west,powered=true,output_direction=0": {
+			"model": "floralisia:block/randomizer_on_left_binary",
+			"y": 90
+		},
+		"binary=true,facing=west,powered=true,output_direction=1": {
+			"model": "floralisia:block/randomizer_on_forward_binary",
+			"y": 90
+		},
+		"binary=true,facing=west,powered=true,output_direction=2": {
+			"model": "floralisia:block/randomizer_on_right_binary",
+			"y": 90
+		}
+	}
+}

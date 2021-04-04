@@ -33,7 +33,10 @@ public class FloralisiaItems {
 	public static final Item CORNFLOWER_PETALS = register("cornflower_petals", new Item(new Item.Settings()));
 	public static final Item LILY_OF_THE_VALLEY_PETALS = register("lily_of_the_valley_petals", new Item(new Item.Settings()));
 	public static final Item WITHER_ROSE_PETALS = register("wither_rose_petals", new Item(new Item.Settings()));
+	public static final Item AGAPANTHUS_PETALS = register("agapanthus_petals", new Item(new Item.Settings()));
 	public static final Item ANASTASIA_PETALS = register("anastasia_petals", new Item(new Item.Settings()));
+	public static final Item CALLA_LILY_PETALS = register("calla_lily_petals", new Item(new Item.Settings()));
+	public static final Item CROCUS_PETALS = register("crocus_petals", new Item(new Item.Settings()));
 	public static final Item CYAN_ROSE_PETALS = register("cyan_rose_petals", new Item(new Item.Settings()));
 	public static final Item CYMBIDIUM_PETALS = register("cymbidium_petals", new Item(new Item.Settings()));
 	public static final Item GLADIOLUS_PETALS = register("gladiolus_petals", new Item(new Item.Settings()));
@@ -43,41 +46,46 @@ public class FloralisiaItems {
 	public static final Item UNFIRED_CLAY_BOTTLE = register("unfired_clay_bottle", new Item(new Item.Settings()));
 	public static final Item CLAY_BOTTLE = register("clay_bottle", new Item(new Item.Settings()));
 	
-	// passive: bookshelves (like enchantment tables)
-	// active: brewing?
-	// player: nearby enchantment
+	// 	X	passive: bookshelves (like enchantment tables)
+	// 		active: brewing?
+	// 		player: nearby enchantment
 	public static final Item ESSENCE_OF_ARCANA = register("essence_of_arcana", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// active: breeding animals (no)
 	public static final Item ESSENCE_OF_ATTACHMENT = register("essence_of_attachment", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
+	//		consumption: "random" blocks or items, greatly losing efficiency if it gets a repeat
 	public static final Item ESSENCE_OF_CHAOS = register("essence_of_chaos", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// active: death
+	// 		active: destroying blocks (this is kinda simple)
 	public static final Item ESSENCE_OF_DESTRUCTION = register("essence_of_destruction", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// passive: (active?) creation of stone blocks in the world (cobble, stone, basalt) potentially using generators
-	//			removing blocks becomes the logistical problem
-	// active: processing of ores? but how does this become renewable?
+	// 	X	passive: (active?) creation of stone blocks in the world (cobble, stone, basalt)
+	// 		active: processing of ores? but how does this become renewable?
 	public static final Item ESSENCE_OF_EARTH = register("essence_of_earth", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// active: nearby smelting, auto crafting (do I want to add this?)
+	// 		active: nearby smelting
+	//		active: nearby auto crafting
 	public static final Item ESSENCE_OF_FABRICATION = register("essence_of_fabrication", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// passive: nearby crop growth (maybe this is active?)
-	// active: bone meal usage, bee fertilization
+	// 		passive: nearby crop growth (maybe this is active?)
+	// 		active: bone meal usage
+	// 		active: bee fertilization
 	public static final Item ESSENCE_OF_GROWTH = register("essence_of_growth", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// passive: lava drip, infinite fire
-	// active: nearyby furnace, fire removing a block
+	// 		passive: lava drip
+	// 		passive: infinite fire
+	// 		passive: nearyby furnace
+	// 	X	active: fire removing a block
 	public static final Item ESSENCE_OF_HEAT = register("essence_of_heat", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// passive: floating items, bubble columns
+	// 		passive: floating items, bubble columns
 	public static final Item ESSENCE_OF_LEVITY = register("essence_of_levity", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// passive: nearby light source
-	// passive: lightning strikes?
+	// 		passive: nearby light source
+	// 		passive: lightning strikes?
 	public static final Item ESSENCE_OF_LIGHT = register("essence_of_light", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
+	//		consumption: "orderly" blocks or items, like chiselled blocks
 	public static final Item ESSENCE_OF_ORDER = register("essence_of_order", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
+	//		consumption: "pure" blocks or items, like glass
 	public static final Item ESSENCE_OF_PURITY = register("essence_of_purity", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
 	public static final Item ESSENCE_OF_RESILIENCE = register("essence_of_resilience", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
 	public static final Item ESSENCE_OF_STABILITY = register("essence_of_stability", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// perhaps force players to "transmutate" other flowers into this one, rather than following the mold
+	// 		perhaps force players to "transmutate" other flowers into this one, rather than following the mold
 	public static final Item ESSENCE_OF_TRANSMUTATION = register("essence_of_transmutation", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
-	// passive: dripstone
-	// active: splash water bottles
-	// player: drinking?
+	// 		passive: dripstone
+	// 	X	active: splash water bottles
+	// 		player: drinking?
 	public static final Item ESSENCE_OF_WATER = register("essence_of_water", new Item(new Item.Settings().group(ItemGroup.MATERIALS)));
 
 	// Consumables

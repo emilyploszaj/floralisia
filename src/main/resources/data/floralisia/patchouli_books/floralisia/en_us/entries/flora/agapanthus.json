@@ -1,0 +1,29 @@
+{
+    "name": "Agapanthus",
+    "icon": "floralisia:agapanthus",
+	"category": "flora",
+	"sortnum": 2,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "floralisia:agapanthus",
+			"text": "The agapanthus is a simple flower with a liking of stability."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Placeholder",
+			"recipe": "floralisia:pool/anastasia"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_stability"
+		},
+		{
+			"type": "crafting",
+			"headertext": "Gray Dye",
+			"recipe": "floralisia:crafting/gray_dye",
+			"text": "Agapanthuses can also be crafted into gray dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Calla Lily",
+    "icon": "floralisia:calla_lily",
+	"category": "flora",
+	"sortnum": 2,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "floralisia:calla_lily",
+			"text": "The calla lily is an unassuming flower known to be fond of destruction."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Placeholder",
+			"recipe": "floralisia:pool/anastasia"
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_destruction"
+		},
+		{
+			"type": "crafting",
+			"headertext": "Black Dye",
+			"recipe": "floralisia:crafting/black_dye",
+			"text": "Calla lilies can also be crafted into black dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}

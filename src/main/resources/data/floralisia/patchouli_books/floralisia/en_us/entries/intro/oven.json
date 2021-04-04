@@ -35,49 +35,50 @@
 		{
 			"type": "oven_recipe",
 			"headertext": "Essence Recipes",
-			"recipe": "floralisia:oven/essence_of_earth",
-			"recipe2": "floralisia:oven/essence_of_fabrication"
+			"recipe": "floralisia:oven/essence_of_destruction2",
+			"recipe2": "floralisia:oven/essence_of_earth"
 		},
 		{
 			"type": "oven_recipe",
 			"headertext": "Essence Recipes",
-			"recipe": "floralisia:oven/essence_of_growth",
-			"recipe2": "floralisia:oven/essence_of_heat"
+			"recipe": "floralisia:oven/essence_of_fabrication",
+			"recipe2": "floralisia:oven/essence_of_growth"
 		},
 		{
 			"type": "oven_recipe",
 			"headertext": "Essence Recipes",
-			"recipe": "floralisia:oven/essence_of_heat2",
-			"recipe2": "floralisia:oven/essence_of_levity"
+			"recipe": "floralisia:oven/essence_of_heat",
+			"recipe2": "floralisia:oven/essence_of_heat2"
 		},
 		{
 			"type": "oven_recipe",
 			"headertext": "Essence Recipes",
-			"recipe": "floralisia:oven/essence_of_light",
-			"recipe2": "floralisia:oven/essence_of_order"
+			"recipe": "floralisia:oven/essence_of_levity",
+			"recipe2": "floralisia:oven/essence_of_light"
 		},
 		{
 			"type": "oven_recipe",
 			"headertext": "Essence Recipes",
-			"recipe": "floralisia:oven/essence_of_order2",
-			"recipe2": "floralisia:oven/essence_of_order3"
+			"recipe": "floralisia:oven/essence_of_order",
+			"recipe2": "floralisia:oven/essence_of_order2"
 		},
 		{
 			"type": "oven_recipe",
 			"headertext": "Essence Recipes",
-			"recipe": "floralisia:oven/essence_of_purity",
-			"recipe2": "floralisia:oven/essence_of_resilience"
+			"recipe": "floralisia:oven/essence_of_order3",
+			"recipe2": "floralisia:oven/essence_of_purity"
 		},
 		{
 			"type": "oven_recipe",
 			"headertext": "Essence Recipes",
-			"recipe": "floralisia:oven/essence_of_stability",
-			"recipe2": "floralisia:oven/essence_of_transmutation"
+			"recipe": "floralisia:oven/essence_of_resilience",
+			"recipe2": "floralisia:oven/essence_of_stability"
 		},
 		{
 			"type": "oven_recipe",
 			"headertext": "Essence Recipes",
-			"recipe": "floralisia:oven/essence_of_water"
+			"recipe": "floralisia:oven/essence_of_transmutation",
+			"recipe2": "floralisia:oven/essence_of_water"
 		}
 	]
 }

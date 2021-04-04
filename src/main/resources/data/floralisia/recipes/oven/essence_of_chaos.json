@@ -2,7 +2,7 @@
 	"type": "floralisia:oven",
 	"ingredients":[
 		{
-			"item": "minecraft:purple_dye"
+			"item": "floralisia:crocus_petals"
 		},
 		{
 			"item": "floralisia:clay_bottle"

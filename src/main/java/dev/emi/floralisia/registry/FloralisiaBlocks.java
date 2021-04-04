@@ -6,6 +6,7 @@ import dev.emi.floralisia.block.CrafterBlock;
 import dev.emi.floralisia.block.EnchantedGrass;
 import dev.emi.floralisia.block.Kiln;
 import dev.emi.floralisia.block.Oven;
+import dev.emi.floralisia.block.RandomizerBlock;
 import dev.emi.floralisia.item.CyanRoseBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -20,7 +21,10 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class FloralisiaBlocks {
+	public static final Block AGAPANTHUS = register("agapanthus", new FlowerBlock(StatusEffects.RESISTANCE, 8, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
 	public static final Block ANASTASIA = register("anastasia", new FlowerBlock(StatusEffects.INVISIBILITY, 7, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+	public static final Block CALLA_LILY = register("calla_lily", new FlowerBlock(StatusEffects.WEAKNESS, 4, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+	public static final Block CROCUS = register("crocus", new FlowerBlock(StatusEffects.LEVITATION, 6, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
 	public static final Block CYAN_ROSE;
 	public static final Block CYMBIDIUM = register("cymbidium", new FlowerBlock(StatusEffects.STRENGTH, 6, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
 	public static final Block GLADIOLUS = register("gladiolus", new FlowerBlock(StatusEffects.HASTE, 8, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
@@ -33,6 +37,8 @@ public class FloralisiaBlocks {
 	public static final Block KILN = register("kiln", new Kiln(FabricBlockSettings.of(Material.STONE)));
 	public static final Block CRAFTER = register("crafter", new CrafterBlock(FabricBlockSettings.copy(Blocks.CRAFTING_TABLE)));
 	public static final Block BREAKER = register("breaker", new BreakerBlock(FabricBlockSettings.copy(Blocks.DISPENSER)));
+
+	public static final Block RANDOMIZER = register("randomizer", new RandomizerBlock(FabricBlockSettings.copy(Blocks.REPEATER)));
 	
 	static {
 		CYAN_ROSE = Registry.register(Registry.BLOCK, new Identifier("floralisia", "cyan_rose"), new FlowerBlock(StatusEffects.JUMP_BOOST, 6, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
