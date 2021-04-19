@@ -16,7 +16,7 @@ import vazkii.patchouli.common.item.ItemModBook;
 public class ItemModBookMixin {
 	private static final Identifier BOOK_ID = new Identifier("floralisia", "floralisia");
 	
-	@Inject(at = @At("HEAD"), method = "getBook", cancellable = true)
+	@Inject(at = @At("HEAD"), method = "getBook", cancellable = true, remap = false)
 	private static void getBook(ItemStack stack, CallbackInfoReturnable<Book> info) {
 		if (stack.getItem() == FloralisiaItems.GUIDE_BOOK) {
 			info.setReturnValue(BookRegistry.INSTANCE.books.get(BOOK_ID));

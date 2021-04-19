@@ -11,7 +11,7 @@ import net.minecraft.item.Item;
 @Mixin(targets = "net.minecraft.enchantment.EnchantmentTarget$2")
 public class EnchantmentTargetBreakableMixin {
 	
-	@Inject(at = @At("HEAD"), method = "isAcceptableItem", cancellable = true)
+	@Inject(at = @At("HEAD"), method = "isAcceptableItem(Lnet/minecraft/item/Item;)Z", cancellable = true)
 	public void isAcceptableItem(Item item, CallbackInfoReturnable<Boolean> info) {
 		if (item == FloralisiaItems.CREEPER_CHARM) {
 			info.setReturnValue(false);
