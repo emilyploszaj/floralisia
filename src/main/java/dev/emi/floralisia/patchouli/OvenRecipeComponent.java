@@ -35,7 +35,7 @@ public class OvenRecipeComponent implements ICustomComponent {
 			floralisiaRecipe = (FloralisiaRecipe) rec;
 		}
 		try {
-			rec = client.world.getRecipeManager().get(new Identifier(lookup.apply(recipe2).asString())).orElseThrow();
+			rec = client.world.getRecipeManager().get(new Identifier(lookup.apply(recipe2).asString())).orElseThrow(() -> new NoSuchElementException());
 			if (rec instanceof FloralisiaRecipe) {
 				floralisiaRecipe2 = (FloralisiaRecipe) rec;
 			}
