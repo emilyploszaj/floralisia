@@ -9,7 +9,6 @@ import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.dispenser.FallibleItemDispenserBehavior;
 import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
@@ -19,8 +18,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 public class AmethystFertilizer extends Item {
-	public AmethystFertilizer() {
-		super(new Item.Settings().group(ItemGroup.MISC));
+	public AmethystFertilizer(Settings settings) {
+		super(settings);
 		DispenserBlock.registerBehavior(this, new FallibleItemDispenserBehavior() {
 			protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
 				World world = pointer.getWorld();

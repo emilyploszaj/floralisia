@@ -11,7 +11,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.RecipeSerializer;
@@ -85,7 +85,7 @@ public class FloralisiaRecipeSerializer implements RecipeSerializer<FloralisiaRe
 			
 			ItemStack stack = new ItemStack(item, count);
 			if (json.has("nbt")) {
-				stack.setTag((CompoundTag) Dynamic.convert(JsonOps.INSTANCE, NbtOps.INSTANCE, json.get("nbt")));
+				stack.setTag((NbtCompound) Dynamic.convert(JsonOps.INSTANCE, NbtOps.INSTANCE, json.get("nbt")));
 			}
 			stacks.add(stack);
 		}

@@ -11,11 +11,12 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.CraftingRecipe;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -23,8 +24,10 @@ import net.minecraft.world.World;
 
 public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 	private static final BonelessScreenHandler HANDLER = new BonelessScreenHandler();
+	private static final int[] ALL_SLOTS = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	private static final int[] BOTTOM_SLOTS = new int[] { 9 };
 	private static final int[] NO_INSERT = new int[0];
+	public boolean powered = false;
 	public boolean persistOut = false;
 	public CraftingInventory craftingInv = new CraftingInventory(HANDLER, 3, 3);
 	public DefaultedList<ItemStack> output = DefaultedList.ofSize(1, ItemStack.EMPTY);
@@ -52,16 +55,16 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 	}
 	
 	@Override
-	public CompoundTag toTag(CompoundTag tag) {
-		super.toTag(tag);
+	public NbtCompound writeNbt(NbtCompound tag) {
+		super.writeNbt(tag);
 		tag.putBoolean("persist", persistOut);
 		DefaultedList<ItemStack> input = DefaultedList.ofSize(9, ItemStack.EMPTY);
 		for (int i = 0; i < 9; i++) {
 			input.set(i, craftingInv.getStack(i));
 		}
-		tag.put("input", Inventories.toTag(new CompoundTag(), input));
-		tag.put("output", Inventories.toTag(new CompoundTag(), output));
-		CompoundTag locks = new CompoundTag();
+		tag.put("input", Inventories.writeNbt(new NbtCompound(), input));
+		tag.put("output", Inventories.writeNbt(new NbtCompound(), output));
+		NbtCompound locks = new NbtCompound();
 		for (int i = 0; i < 9; i++) {
 			locks.putBoolean("" + i, lockedSlot[i]);
 		}
@@ -70,16 +73,16 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 	}
 	
 	@Override
-	public void fromTag(CompoundTag tag) {
-		super.fromTag(tag);
+	public void readNbt(NbtCompound tag) {
+		super.readNbt(tag);
 		persistOut = tag.getBoolean("persist");
 		DefaultedList<ItemStack> input = DefaultedList.ofSize(9, ItemStack.EMPTY);
-		Inventories.fromTag(tag.getCompound("input"), input);
+		Inventories.readNbt(tag.getCompound("input"), input);
 		for (int i = 0; i < 9; i++) {
 			craftingInv.setStack(i, input.get(i));
 		}
-		Inventories.fromTag(tag.getCompound("output"), output);
-		CompoundTag locks = tag.getCompound("locked");
+		Inventories.readNbt(tag.getCompound("output"), output);
+		NbtCompound locks = tag.getCompound("locked");
 		for (int i = 0; i < 9; i++) {
 			lockedSlot[i] = locks.getBoolean("" + i);
 		}
@@ -101,6 +104,7 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 	}
 
 	private void serverTick(World world, BlockPos pos, BlockState state) {
+		powered = state.get(Properties.POWERED);
 		if (persistOut && output.get(0).isEmpty()) {
 			persistOut = false;
 		}
@@ -110,7 +114,7 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 				CraftingRecipe r = recipes.get(0);
 				if (r.equals(lastRecipe)) {
 					if (!ItemStack.areEqual(r.getOutput(), output.get(0))) {
-						consumeInput();
+						consumeInput(r);
 						persistOut = true;
 						r = null;
 					}
@@ -120,6 +124,7 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 				lastRecipe = r;
 			} else {
 				output.set(0, ItemStack.EMPTY);
+				lastRecipe = null;
 			}
 		}
 	}
@@ -134,11 +139,15 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 		insertSlot[0] = -1;
 	}
 
-	public void consumeInput() {
-		// TODO remainders? how do I want to do this
+	public void consumeInput(CraftingRecipe recipe) {
+		DefaultedList<ItemStack> remainders = recipe.getRemainder(craftingInv);
 		for (int i = 0; i < 9; i++) {
-			if (!craftingInv.getStack(i).isEmpty()) {
-				craftingInv.getStack(i).decrement(1);
+			if (remainders.get(i).isEmpty()) {
+				if (!craftingInv.getStack(i).isEmpty()) {
+					craftingInv.getStack(i).decrement(1);
+				}
+			} else {
+				craftingInv.setStack(i, remainders.get(i));
 			}
 		}
 		updateInsertSlot();
@@ -174,26 +183,31 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 
 	@Override
 	public ItemStack removeStack(int slot, int amount) {
+		ItemStack ret;
 		if (slot == 9) {
-			return Inventories.splitStack(this.output, 0, amount);
+			ret = Inventories.splitStack(this.output, 0, amount);
 		} else {
-			return craftingInv.removeStack(slot, amount);
+			ret = craftingInv.removeStack(slot, amount);
 		}
+		updateInsertSlot();
+		return ret;
 	}
 
 	@Override
 	public ItemStack removeStack(int slot) {
+		ItemStack ret;
 		if (slot == 9) {
-			return Inventories.removeStack(this.output, 0);
+			ret = Inventories.removeStack(this.output, 0);
 		} else {
-			return craftingInv.removeStack(slot);
+			ret = craftingInv.removeStack(slot);
 		}
+		updateInsertSlot();
+		return ret;
 	}
 
 	@Override
 	public void setStack(int slot, ItemStack stack) {
 		if (slot == 9) {
-
 			output.set(0, stack);
 		} else {
 			craftingInv.setStack(slot, stack);
@@ -217,7 +231,7 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 	@Override
 	public int[] getAvailableSlots(Direction side) {
 		if (side == Direction.DOWN) {
-			return BOTTOM_SLOTS;
+			return powered && output.get(0).isEmpty() ? ALL_SLOTS : BOTTOM_SLOTS;
 		} else if (insertSlot[0] == -1) {
 			return NO_INSERT;
 		} else {
@@ -232,7 +246,7 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 
 	@Override
 	public boolean canExtract(int slot, ItemStack stack, Direction dir) {
-		return slot == 9 && dir == Direction.DOWN;
+		return dir == Direction.DOWN;
 	}
 
 	static class BonelessScreenHandler extends ScreenHandler {

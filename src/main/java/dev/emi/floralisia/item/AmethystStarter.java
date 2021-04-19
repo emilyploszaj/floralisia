@@ -4,7 +4,6 @@ import dev.emi.floralisia.pool.PoolCrafter;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.FallibleItemDispenserBehavior;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.sound.SoundCategory;
@@ -16,8 +15,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 public class AmethystStarter extends Item {
-	public AmethystStarter() {
-		super(new Item.Settings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(200));
+	public AmethystStarter(Settings settings) {
+		super(settings);
 		DispenserBlock.registerBehavior(this, new FallibleItemDispenserBehavior() {
 			protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
 				World world = pointer.getWorld();

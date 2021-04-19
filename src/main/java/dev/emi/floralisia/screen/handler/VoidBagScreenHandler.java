@@ -10,8 +10,8 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -32,11 +32,11 @@ public class VoidBagScreenHandler extends ScreenHandler {
 		this(syncId, inv, context);
 		this.lockedSlot = lockedSlot;
 		propertyDelegate.set(0, lockedSlot);
-		CompoundTag tag = inv.getStack(lockedSlot).getTag();
+		NbtCompound tag = inv.getStack(lockedSlot).getTag();
 		if (tag != null && tag.contains("voids")) {
-			ListTag list = (ListTag) tag.get("voids");
+			NbtList list = (NbtList) tag.get("voids");
 			for (int i = 0; i < list.size(); i++) {
-				config.setStack(i, ItemStack.fromTag(list.getCompound(i)));
+				config.setStack(i, ItemStack.fromNbt(list.getCompound(i)));
 			}
 		}
 	}
@@ -70,13 +70,13 @@ public class VoidBagScreenHandler extends ScreenHandler {
 		super.close(player);
 		if (!player.world.isClient) {
 			ItemStack stack = player.getInventory().getStack(lockedSlot);
-			CompoundTag tag = new CompoundTag();
-			ListTag list = new ListTag();
+			NbtCompound tag = new NbtCompound();
+			NbtList list = new NbtList();
 			Set<Item> set = new HashSet<Item>();
 			for (int i = 0; i < 15; i++) {
 				if (!config.getStack(i).isEmpty() && !set.contains(config.getStack(i).getItem())) {
 					set.add(config.getStack(i).getItem());
-					list.add(config.getStack(i).toTag(new CompoundTag()));
+					list.add(config.getStack(i).writeNbt(new NbtCompound()));
 				}
 			}
 			tag.put("voids", list);
@@ -152,7 +152,7 @@ public class VoidBagScreenHandler extends ScreenHandler {
 
 		@Override
 		public boolean canTakeItems(PlayerEntity player) {
-			setStack(new ItemStack(player.getInventory().getCursorStack().getItem()));
+			setStack(new ItemStack(player.currentScreenHandler.getCursorStack().getItem()));
 			return false;
 		}
 

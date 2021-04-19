@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "floralisia:block/splitter"
+    },
+    "axis=x": {
+      "model": "floralisia:block/splitter",
+      "y": 90
+    }
+  }
+}

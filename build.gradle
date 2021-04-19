@@ -14,6 +14,7 @@ minecraft {
 }
 
 repositories {
+	mavenCentral()
 	maven {
 		url = "https://jitpack.io"
 	}
@@ -32,9 +33,13 @@ dependencies {
 
 	modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	
-	modImplementation "vazkii.patchouli:Patchouli:1.16.4-48-FABRIC"
+	//modImplementation "vazkii.patchouli:Patchouli:1.16.4-48-FABRIC"
 
 	modImplementation "com.github.emilyalexandra:trinkets:20c930ec2a"
+
+	modImplementation "com.github.emilyalexandra:Patchouli:5ce3bb0362"
+
+	include "blue.endless:jankson:1.1.0"
 }
 processResources {
 	inputs.property "version", project.version

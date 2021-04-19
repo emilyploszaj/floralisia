@@ -23,7 +23,7 @@ public abstract class PotionEntityMixin extends ThrownItemEntity {
 	}
 
 	@Inject(at = @At("HEAD"), method = "extinguishFire")
-	private void extinguishFire(BlockPos pos, Direction direction, CallbackInfo info) {
+	private void extinguishFire(BlockPos pos, CallbackInfo info) {
 		pos = pos.offset(Direction.DOWN);
 		BlockState state = world.getBlockState(pos);
 		if (state.getBlock() instanceof EnchantedGrass) {

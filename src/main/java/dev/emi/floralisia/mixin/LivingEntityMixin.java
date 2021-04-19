@@ -20,7 +20,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -53,12 +53,12 @@ public abstract class LivingEntityMixin extends Entity {
 					List<Pair<SlotReference, ItemStack>> list = comp.getEquipped(stack -> {
 						if (!stack.isOf(FloralisiaItems.RING_OF_SAFEGUARDING)) return false;
 						if (!stack.hasTag()) return false;
-						CompoundTag tag = stack.getTag();
+						NbtCompound tag = stack.getTag();
 						return tag.contains("ProtectedPlayer") && tag.getUuid("ProtectedPlayer").equals(this.getUuid());
 					});
 					if (list.size() > 0) {
 						ItemStack stack = list.get(0).getRight();
-						CompoundTag tag = stack.getOrCreateTag();
+						NbtCompound tag = stack.getOrCreateTag();
 						float max = player.getMaxHealth();
 						float health = player.getHealth() / 2;
 						if (tag.contains("Health")) {

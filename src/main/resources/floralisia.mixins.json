@@ -3,23 +3,38 @@
   "package": "dev.emi.floralisia.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-	  "PlayerInventoryMixin",
-	  "WiltMixin",
-	  "CreeperEntityMixin",
-	  "EnchantmentTargetBreakableMixin",
-	  "ItemModBookMixin",
-	  "PlantBlockMixin",
-	  "BuddingAmethystBlockMixin",
-	  "LivingEntityMixin",
-	  "PotionEntityMixin",
-	  "FluidBlockMixin",
-	  "LavaFluidMixin",
-	  "FireBlockMixin"
+    "accessor.ItemAccessor",
+
+    "monocle.ComparatorBlockMixin",
+    "monocle.DaylightDetectorBlockMixin",
+    "monocle.HopperBlockMixin",
+    "monocle.NoteBlockMixin",
+    "monocle.PistonBlockMixin",
+    "monocle.PistonHeadBlockMixin",
+    "monocle.RedstoneWireBlockMixin",
+    "monocle.WeightedPressurePlateBlockMixin",
+
+    "BuddingAmethystBlockMixin",
+    "CreeperEntityMixin",
+    "EnchantmentTargetBreakableMixin",
+    "HopperBlockEntityMixin",
+    "ItemPlacementContextMixin",
+    "ItemUsageContextMixin",
+    "FireBlockMixin",
+    "FluidBlockMixin",
+    "GenerationSettingsMixin",
+    "InGameHudMixin",
+    "ItemModBookMixin",
+    "LavaFluidMixin",
+    "LivingEntityMixin",
+    "PlantBlockMixin",
+    "PlayerEntityMixin",
+    "PlayerInventoryMixin",
+    "PotionEntityMixin",
+    "WiltMixin"
   ],
   "client": [
-	"ClientPlayNetworkHandlerMixin",
-	"FixPatchouli",
-	"FixPatchouli2"
+    "ClientPlayNetworkHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

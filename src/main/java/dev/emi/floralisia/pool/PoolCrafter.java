@@ -8,10 +8,11 @@ import dev.emi.floralisia.recipe.FloralisiaIngredient;
 import dev.emi.floralisia.recipe.FloralisiaRecipe;
 import dev.emi.floralisia.recipe.FloralisiaRecipeType;
 import dev.emi.floralisia.registry.FloralisiaEntities;
+import net.fabricmc.fabric.mixin.tag.extension.AccessorFluidTags;
 import net.minecraft.block.Block;
-import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.ItemEntity;
-import net.minecraft.tag.FluidTags;
+import net.minecraft.tag.BlockTags;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
@@ -19,6 +20,8 @@ import net.minecraft.world.World;
 
 // TODO: remove this class and put the logic somewhere else
 public class PoolCrafter {
+	private static final Identifier POOL_FLUIDS = new Identifier("floralisia", "pool_fluids");
+	private static final Identifier POOL_FLOWERS = new Identifier("floralisia", "pool_flowers");
 
 	public static boolean craft(World world, BlockPos pos) {
 		List<Block> flowers = new ArrayList<>();
@@ -51,14 +54,15 @@ public class PoolCrafter {
 		}
 		for (int x = minX + 1; x < maxX; x++) {
 			for (int z = minZ + 1; z < maxZ; z++) {
-				if (!world.getFluidState(new BlockPos(x, pos.getY(), z)).isIn(FluidTags.WATER)) {
+				if (!world.getFluidState(new BlockPos(x, pos.getY(), z))
+						.isIn(AccessorFluidTags.getRequiredTags().getGroup().getTag(POOL_FLUIDS))) {
 					return false;
 				}
 			}
 		}
 		for (int x = minX + 1; x < maxX; x++) {
 			Block block = world.getBlockState(new BlockPos(x, pos.getY() + 1, minZ)).getBlock();
-			if (!(block instanceof FlowerBlock)) {
+			if (!BlockTags.getTagGroup().getTag(POOL_FLOWERS).contains(block)) {
 				return false;
 			} else {
 				if (!flowers.contains(block)) {
@@ -66,7 +70,7 @@ public class PoolCrafter {
 				}
 			}
 			block = world.getBlockState(new BlockPos(x, pos.getY() + 1, maxZ)).getBlock();
-			if (!(block instanceof FlowerBlock)) {
+			if (!BlockTags.getTagGroup().getTag(POOL_FLOWERS).contains(block)) {
 				return false;
 			} else {
 				if (!flowers.contains(block)) {
@@ -76,7 +80,7 @@ public class PoolCrafter {
 		}
 		for (int z = minZ + 1; z < maxZ; z++) {
 			Block block = world.getBlockState(new BlockPos(minX, pos.getY() + 1, z)).getBlock();
-			if (!(block instanceof FlowerBlock)) {
+			if (!BlockTags.getTagGroup().getTag(POOL_FLOWERS).contains(block)) {
 				return false;
 			} else {
 				if (!flowers.contains(block)) {
@@ -84,7 +88,7 @@ public class PoolCrafter {
 				}
 			}
 			block = world.getBlockState(new BlockPos(maxX, pos.getY() + 1, z)).getBlock();
-			if (!(block instanceof FlowerBlock)) {
+			if (!BlockTags.getTagGroup().getTag(POOL_FLOWERS).contains(block)) {
 				return false;
 			} else {
 				if (!flowers.contains(block)) {

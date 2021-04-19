@@ -7,8 +7,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ParticleEffect;
@@ -75,20 +75,20 @@ public class PoolCraftingEntity extends Entity {
 	}
 
 	@Override
-	protected void readCustomDataFromTag(CompoundTag tag) {
+	protected void readCustomDataFromNbt(NbtCompound tag) {
 		this.duration = tag.getInt("Duration");
-		ListTag list = tag.getList("Results", 10);
+		NbtList list = tag.getList("Results", 10);
 		for (int i = 0; i < list.size(); i++) {
-			results.add(ItemStack.fromTag(list.getCompound(i)));
+			results.add(ItemStack.fromNbt(list.getCompound(i)));
 		}
 	}
 
 	@Override
-	protected void writeCustomDataToTag(CompoundTag tag) {
+	protected void writeCustomDataToNbt(NbtCompound tag) {
 		tag.putInt("Duration", duration);
-		ListTag list = new ListTag();
+		NbtList list = new NbtList();
 		for (ItemStack stack : results) {
-			list.add(stack.toTag(new CompoundTag()));
+			list.add(stack.writeNbt(new NbtCompound()));
 		}
 		tag.put("Results", list);
 	}

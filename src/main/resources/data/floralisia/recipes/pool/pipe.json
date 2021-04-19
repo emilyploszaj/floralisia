@@ -1,0 +1,36 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:hopper"
+		},
+		{
+			"item": "minecraft:terracotta",
+			"count": 6
+		},
+		{
+			"item": "floralisia:essence_of_order"
+		},
+		{
+			"item": "floralisia:essence_of_levity"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:pipe",
+			"count": 12
+		}
+	],
+	"flowers": [
+		{
+			"block": "minecraft:orange_tulip"
+		},
+		{
+			"block": "minecraft:white_tulip"
+		},
+		{
+			"block": "minecraft:pink_tulip"
+		}
+	],
+	"minimumflowers": 7
+}

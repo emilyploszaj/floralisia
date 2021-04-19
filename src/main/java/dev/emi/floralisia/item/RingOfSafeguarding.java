@@ -14,7 +14,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.attribute.EntityAttributeModifier.Operation;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -33,7 +33,7 @@ public class RingOfSafeguarding extends TrinketItem {
 	public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
 		if (entity instanceof PlayerEntity) {
 			if (!user.world.isClient) {
-				CompoundTag tag = stack.getOrCreateTag();
+				NbtCompound tag = stack.getOrCreateTag();
 				tag.putUuid("ProtectedPlayer", entity.getUuid());
 				tag.putString("ProtectedName", entity.getName().asString());
 				user.sendMessage(new TranslatableText("action.floralisia.ring_of_safeguarding.bound", entity.getName()), true);
@@ -46,7 +46,7 @@ public class RingOfSafeguarding extends TrinketItem {
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 		super.appendTooltip(stack, world, tooltip, context);
-		CompoundTag tag = stack.getOrCreateTag();
+		NbtCompound tag = stack.getOrCreateTag();
 		if (tag.contains("ProtectedName")) {
 			tooltip.add(new TranslatableText("tooltip.floralisia.ring_of_safeguarding.bound", new LiteralText(tag.getString("ProtectedName")))
 				.formatted(Formatting.GRAY));
@@ -60,7 +60,7 @@ public class RingOfSafeguarding extends TrinketItem {
 	@Override
 	public void tick(ItemStack stack, SlotReference slot, LivingEntity entity) {
 		if (!entity.world.isClient) {
-			CompoundTag tag = stack.getOrCreateTag();
+			NbtCompound tag = stack.getOrCreateTag();
 			if (tag.contains("Cooldown")) {
 				int cooldown = tag.getInt("Cooldown") - 1;
 				if (cooldown < 0) {
@@ -78,7 +78,7 @@ public class RingOfSafeguarding extends TrinketItem {
 
 	@Override
 	public boolean canUnequip(ItemStack stack, SlotReference slot, LivingEntity entity) {
-		CompoundTag tag = stack.getOrCreateTag();
+		NbtCompound tag = stack.getOrCreateTag();
 		if (tag.contains("Cooldown") && tag.getInt("Cooldown") > 0) {
 			return false;
 		}
@@ -88,7 +88,7 @@ public class RingOfSafeguarding extends TrinketItem {
 	@Override
 	public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid) {
 		Multimap<EntityAttribute, EntityAttributeModifier> map = super.getModifiers(stack, slot, entity, uuid);
-		CompoundTag tag = stack.getOrCreateTag();
+		NbtCompound tag = stack.getOrCreateTag();
 		if (tag.contains("Cooldown")) {
 			if (tag.getInt("Cooldown") > 0) {
 				float health = 10;

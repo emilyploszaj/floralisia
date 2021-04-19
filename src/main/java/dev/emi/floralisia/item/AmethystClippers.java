@@ -7,7 +7,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.FallibleItemDispenserBehavior;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.sound.SoundCategory;
@@ -20,8 +19,8 @@ import net.minecraft.world.World;
 
 public class AmethystClippers extends Item {
 
-	public AmethystClippers() {
-		super(new Item.Settings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(200));
+	public AmethystClippers(Settings settings) {
+		super(settings);
 		DispenserBlock.registerBehavior(this, new FallibleItemDispenserBehavior() {
 
 			protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {

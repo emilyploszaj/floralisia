@@ -1,0 +1,46 @@
+{
+	"variants": {
+		"bites=0": {
+			"model": "floralisia:block/amethyst_cake"
+		},
+		"bites=1": {
+			"model": "floralisia:block/amethyst_cake_1"
+		},
+		"bites=2": {
+			"model": "floralisia:block/amethyst_cake_2"
+		},
+		"bites=3": {
+			"model": "floralisia:block/amethyst_cake_3"
+		},
+		"bites=4": {
+			"model": "floralisia:block/amethyst_cake_4"
+		},
+		"bites=5": {
+			"model": "floralisia:block/amethyst_cake_5"
+		},
+		"bites=6": {
+			"model": "floralisia:block/amethyst_cake_6"
+		},
+		"bites=7": {
+			"model": "floralisia:block/amethyst_cake_7"
+		},
+		"bites=8": {
+			"model": "floralisia:block/amethyst_cake_8"
+		},
+		"bites=9": {
+			"model": "floralisia:block/amethyst_cake_9"
+		},
+		"bites=10": {
+			"model": "floralisia:block/amethyst_cake_10"
+		},
+		"bites=11": {
+			"model": "floralisia:block/amethyst_cake_11"
+		},
+		"bites=12": {
+			"model": "floralisia:block/amethyst_cake_12"
+		},
+		"bites=13": {
+			"model": "floralisia:block/amethyst_cake_13"
+		}
+	}
+}

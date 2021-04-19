@@ -1,5 +1,6 @@
 package dev.emi.floralisia.block.entity;
 
+import dev.emi.floralisia.FloralisiaMain;
 import dev.emi.floralisia.block.BreakerBlock;
 import dev.emi.floralisia.registry.FloralisiaBlockEntities;
 import net.minecraft.block.Block;
@@ -12,7 +13,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -31,16 +32,16 @@ public class BreakerBlockEntity extends BlockEntity implements SidedInventory {
 	}
 	
 	@Override
-	public CompoundTag toTag(CompoundTag tag) {
-		super.toTag(tag);
-		tag.put("stacks", Inventories.toTag(new CompoundTag(), stacks));
+	public NbtCompound writeNbt(NbtCompound tag) {
+		super.writeNbt(tag);
+		tag.put("stacks", Inventories.writeNbt(new NbtCompound(), stacks));
 		return tag;
 	}
 	
 	@Override
-	public void fromTag(CompoundTag tag) {
-		super.fromTag(tag);
-		Inventories.fromTag(tag.getCompound("stacks"), stacks);
+	public void readNbt(NbtCompound tag) {
+		super.readNbt(tag);
+		Inventories.readNbt(tag.getCompound("stacks"), stacks);
 	}
 
 	public static void tick(World world, BlockPos pos, BlockState state, BreakerBlockEntity be) {
@@ -79,7 +80,7 @@ public class BreakerBlockEntity extends BlockEntity implements SidedInventory {
 					BlockEntity blockEntity = mineState.hasBlockEntity() ? world.getBlockEntity(pos) : null;
 					Block.dropStacks(mineState, world, interactPos, blockEntity, null, tool);
 				}
-				tool.damage(4, world.random, null);
+				tool.damage(FloralisiaMain.config.breakerDamageMultiplier, world.random, null);
 				if (tool.getDamage() > tool.getMaxDamage()) {
 					stacks.set(0, ItemStack.EMPTY);
 				}

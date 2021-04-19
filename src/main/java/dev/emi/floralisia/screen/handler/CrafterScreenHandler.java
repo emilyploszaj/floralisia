@@ -55,15 +55,14 @@ public class CrafterScreenHandler extends ScreenHandler {
 	}
 
 	@Override
-	public ItemStack onSlotClick(int slotIndex, int clickData, SlotActionType actionType, PlayerEntity player) {
+	public void onSlotClick(int slotIndex, int clickData, SlotActionType actionType, PlayerEntity player) {
 		if (slotIndex < 9 && slotIndex >= 0) {
 			if (be != null) {
 				be.lockedSlot[slotIndex] = !be.lockedSlot[slotIndex];
 				be.updateInsertSlot();
 			}
-			return slots.get(slotIndex).getStack();
 		} else {
-			return super.onSlotClick(slotIndex, clickData, actionType, player);
+			super.onSlotClick(slotIndex, clickData, actionType, player);
 		}
 	}
 

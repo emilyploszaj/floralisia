@@ -1,0 +1,33 @@
+{
+	"name": "Logistics Pipes",
+	"icon": "floralisia:pipe",
+	"category": "implements",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "text",
+			"text": "Logistics is the basic task through which every floralist accomplishes their goals. However, without magical implements, some tasks can be more annoying than they ought. For instance, if a floralist wants to transfer some of their items over a moderate distance, they will either have to build a railway, which is excessive for relatively short distance transport, or lay a "
+		},
+		{
+			"type": "text",
+			"text": "long line of hoppers together. Hoppers are invaluable tools for automation and logistics yes, but medium to long distance transport is where their flaws are most prevalent. They catch anything that falls on them, so a diligent floralist will take the responsibilty of covering them up. They also can't move items upward, requiring complex setups to raise them higher, and this has a cost with more saturated forms of item transport."
+		},
+		{
+			"type": "text",
+			"text": "Keeping track of when to send more items up quickly becomes a nightmare. Fortunately, a bit of magic can overcome these mundane restrictions. Logistics pipes are a solution tailor made for medium distance item transportation, they can travel reasonably long distances, move items in all directions, and they connect right up to existing hopper systems. What's the catch, right? As they're based on mundane hoppers, logistics pipes do have some limitations."
+		},
+		{
+			"type": "pool_recipe",
+			"headertext": "Logistics Pipes",
+			"recipe": "floralisia:pool/pipe"
+		},
+		{
+			"type": "text",
+			"text": "First and foremost, they retain a fundamental property of hoppers, 1 to 1 transportation. That is, any given length of pipe will have exactly 2 endpoints. Inserting from one end will come out the other side. Logistics pipes are not complex enough to have behavior such as distributing or sorting items into multiple outputs, but of course an aspiring floralist will recognize the call to design these systems and will have no trouble implementing them."
+		},
+		{
+			"type": "text",
+			"text": "In addition, logistics pipes can only drop items off into inventories below them, though items can be put into pipes from any side. It is worth noting that, unlike hoppers, logistics pipes don't have the capacity to pick up items from above them on the ground."
+		}
+	]
+}

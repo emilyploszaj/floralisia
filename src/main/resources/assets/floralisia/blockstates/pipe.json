@@ -1,0 +1,105 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "floralisia:block/pipe_center"
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "input_north": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side"
+      }
+    },
+    {
+      "when": {
+        "input_east": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "input_south": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "input_west": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "output": "true"
+      },
+      "apply": {
+        "model": "floralisia:block/pipe_output"
+      }
+    }
+  ]
+}

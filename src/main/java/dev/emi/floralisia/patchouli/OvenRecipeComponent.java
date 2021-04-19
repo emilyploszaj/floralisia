@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 import java.util.function.UnaryOperator;
 
 import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 
 import dev.emi.floralisia.recipe.FloralisiaRecipe;
 import net.minecraft.client.MinecraftClient;
@@ -59,9 +60,8 @@ public class OvenRecipeComponent implements ICustomComponent {
 				ItemStack stack = floralisiaRecipe.outputs.get(i);
 				context.renderItemStack(matrices, 72, 28 + i * 19, mouseX, mouseY, stack);
 			}
-			GlStateManager.enableBlend();
-			MinecraftClient client = MinecraftClient.getInstance();
-			client.getTextureManager().bindTexture(context.getCraftingTexture());
+			GlStateManager._enableBlend();
+			RenderSystem.setShaderTexture(0, context.getCraftingTexture());
 			DrawableHelper.drawTexture(matrices, 24, 24, 11, 135, 24, 43, 128, 256);
 			DrawableHelper.drawTexture(matrices, 54, 41, 38, 152, 9, 9, 128, 256);
 			DrawableHelper.drawTexture(matrices, 68, 24, 11, 135, 24, 43, 128, 256);
@@ -75,9 +75,8 @@ public class OvenRecipeComponent implements ICustomComponent {
 				ItemStack stack = floralisiaRecipe2.outputs.get(i);
 				context.renderItemStack(matrices, 72, 78 + i * 19, mouseX, mouseY, stack);
 			}
-			GlStateManager.enableBlend();
-			MinecraftClient client = MinecraftClient.getInstance();
-			client.getTextureManager().bindTexture(context.getCraftingTexture());
+			GlStateManager._enableBlend();
+			RenderSystem.setShaderTexture(0, context.getCraftingTexture());
 			DrawableHelper.drawTexture(matrices, 24, 74, 11, 135, 24, 43, 128, 256);
 			DrawableHelper.drawTexture(matrices, 54, 91, 38, 152, 9, 9, 128, 256);
 			DrawableHelper.drawTexture(matrices, 68, 74, 11, 135, 24, 43, 128, 256);
