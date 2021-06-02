@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class FloralisiaEntities {
-	public static final EntityType<PoolCraftingEntity> POOL_CRAFTING_ENTITY = register("pool-crafting-entity", PoolCraftingEntity::new);
+	public static final EntityType<PoolCraftingEntity> POOL = register("pool", PoolCraftingEntity::new);
 
 	public static void init() {
 	}

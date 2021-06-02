@@ -7,6 +7,7 @@ import dev.emi.floralisia.block.BreakerBlock;
 import dev.emi.floralisia.block.ChuteBlock;
 import dev.emi.floralisia.block.CrafterBlock;
 import dev.emi.floralisia.block.EnchantedGrass;
+import dev.emi.floralisia.block.FlaxBlock;
 import dev.emi.floralisia.block.Kiln;
 import dev.emi.floralisia.block.Oven;
 import dev.emi.floralisia.block.PipeBlock;
@@ -45,6 +46,8 @@ public class FloralisiaBlocks {
 	public static final Block CYMBIDIUM = register("cymbidium", new FlowerBlock(StatusEffects.STRENGTH, 6, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
 	public static final Block GLADIOLUS = register("gladiolus", new FlowerBlock(StatusEffects.HASTE, 8, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
 	
+	public static final Block FLAX = registerBlockOnly("flax", new FlaxBlock(FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.CROP)));
+
 	public static final Block ENCHANTED_GRASS = register("enchanted_grass", new EnchantedGrass(FabricBlockSettings.of(Material.SOLID_ORGANIC).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)));
 
 	public static final Block AMETHYST_REVIBRATOR = register("amethyst_revibrator", new AmethystRevibrator(4, 3, FabricBlockSettings.copy(Blocks.LARGE_AMETHYST_BUD).sounds(BlockSoundGroup.SMALL_AMETHYST_BUD).luminance(state -> 2)));
@@ -73,10 +76,14 @@ public class FloralisiaBlocks {
 	public static void init() {
 	}
 
-	public static Block register(String name, Block block) {
+	private static Block register(String name, Block block) {
 		block = Registry.register(Registry.BLOCK, new Identifier("floralisia", name), block);
 		Registry.register(Registry.ITEM, new Identifier("floralisia", name), new BlockItem(block, new Item.Settings()));
 		BLOCKS.add(new ItemStack(block));
 		return block;
+	}
+
+	private static Block registerBlockOnly(String name, Block block) {
+		return Registry.register(Registry.BLOCK, new Identifier("floralisia", name), block);
 	}
 }

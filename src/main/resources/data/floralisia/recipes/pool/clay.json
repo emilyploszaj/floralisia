@@ -3,10 +3,7 @@
 	"ingredients":[
 		{
 			"item": "minecraft:sand",
-			"count": 8
-		},
-		{
-			"item": "floralisia:essence_of_transmutation"
+			"count": 16
 		},
 		{
 			"item": "floralisia:essence_of_purity"
@@ -18,7 +15,7 @@
 	"results": [
 		{
 			"item": "minecraft:clay",
-			"count": 8
+			"count": 16
 		}
 	],
 	"flowers": [

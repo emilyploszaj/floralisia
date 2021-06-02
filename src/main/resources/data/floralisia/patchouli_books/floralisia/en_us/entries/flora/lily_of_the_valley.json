@@ -1,0 +1,30 @@
+{
+    "name": "Lily of the Valley",
+    "icon": "minecraft:lily_of_the_valley",
+	"category": "flora",
+	"sortnum": 1,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "minecraft:lily_of_the_valley",
+			"text": "The lily of the valley is notable for the pure white of its petals, and the applications this has to a floralist."
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_purity"
+		},
+		{
+			"type": "spotlight",
+			"item": "floralisia:enchanted_grass",
+			"title": "Spreading",
+			"text": "Though impressions may be meek, the lily of the valley is a mildly aggresive flower, gleefully consuming items it considers pure. This action, however, will also encourage spreading. The lily of the valley seems to be easily bored however, and spreads most commonly with item variety, up to 8."
+		},
+		{
+			"type": "crafting",
+			"headertext": "Red Dye",
+			"recipe": "minecraft:white_dye_from_lily_of_the_valley",
+			"text": "The lily of the valley can also be crafted into white dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}

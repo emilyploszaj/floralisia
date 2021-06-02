@@ -2,27 +2,58 @@ package dev.emi.floralisia.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import dev.emi.floralisia.recipe.FloralisiaRecipe;
+import dev.emi.floralisia.registry.FloralisiaEntities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameters;
+import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 public class PoolCraftingEntity extends Entity {
 	public List<ItemStack> results = new ArrayList<ItemStack>();
 	public int duration;
 
-	public PoolCraftingEntity(EntityType<?> type, World world) {
+	public PoolCraftingEntity(EntityType<PoolCraftingEntity> type, World world) {
 		super(type, world);
+	}
+
+	public PoolCraftingEntity(World world) {
+		this(FloralisiaEntities.POOL, world);
+	}
+
+	public void setRecipe(FloralisiaRecipe recipe) {
+		if (world instanceof ServerWorld) {
+			ServerWorld serverWorld = (ServerWorld) world;
+			for (ItemStack stack : recipe.outputs) {
+				results.add(stack);
+			}
+			Random rand = world.getRandom();
+			for (Identifier id : recipe.lootTables) {
+				LootTable table = serverWorld.getServer().getLootManager().getTable(id);
+				table.generateLoot(new LootContext.Builder(serverWorld)
+						.random(rand)
+						.parameter(LootContextParameters.ORIGIN, getPos())
+						.build(LootContextTypes.COMMAND),
+					stack -> results.add(stack));
+			}
+		}
 	}
 
 	@Override

@@ -1,0 +1,31 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:stone"
+		},
+		{
+			"item": "floralisia:essence_of_transmutation"
+		},
+		{
+			"item": "floralisia:essence_of_purity"
+		},
+		{
+			"item": "floralisia:essence_of_earth"
+		}
+	],
+	"results": [
+		{
+			"loot_table": "floralisia:pool/ores"
+		}
+	],
+	"flowers": [
+		{
+			"block": "floralisia:cyan_rose"
+		},
+		{
+			"block": "floralisia:cymbidium"
+		}
+	],
+	"minimumflowers": 8
+}

@@ -37,7 +37,7 @@ public abstract class WiltMixin extends Block {
 
 	public WiltMixin(Settings settings) {
 		super(settings);
-	}
+	}/*
 
 	@Inject(at = @At("RETURN"), method = "<init>")
 	public void init(CallbackInfo info) {
@@ -54,5 +54,5 @@ public abstract class WiltMixin extends Block {
 	@Inject(at = @At("TAIL"), method = "appendProperties")
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo info) {
 		builder.add(WILT);
-	}
+	}*/
 }

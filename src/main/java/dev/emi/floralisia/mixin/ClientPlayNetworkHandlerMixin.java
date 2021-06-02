@@ -19,8 +19,8 @@ public abstract class ClientPlayNetworkHandlerMixin{
 
 	@Inject(at = @At(value = "TAIL"), method = "onEntitySpawn")
 	public void assignProxy(EntitySpawnS2CPacket packet, CallbackInfo info){
-		if(packet.getEntityTypeId() == FloralisiaEntities.POOL_CRAFTING_ENTITY){
-			PoolCraftingEntity entity = new PoolCraftingEntity(FloralisiaEntities.POOL_CRAFTING_ENTITY, world);
+		if(packet.getEntityTypeId() == FloralisiaEntities.POOL){
+			PoolCraftingEntity entity = new PoolCraftingEntity(FloralisiaEntities.POOL, world);
 			entity.setPos(packet.getX(), packet.getY(), packet.getZ());
 			entity.duration = 20;
 			entity.setEntityId(packet.getId());

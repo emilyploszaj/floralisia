@@ -1,5 +1,6 @@
 package dev.emi.floralisia.item;
 
+import dev.emi.floralisia.registry.FloralisiaBlocks;
 import dev.emi.floralisia.registry.FloralisiaItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -80,6 +81,20 @@ public class AmethystClippers extends Item {
 			drop = FloralisiaItems.LILY_OF_THE_VALLEY_PETALS;
 		} else if (state.getBlock() == Blocks.WITHER_ROSE) {
 			drop = FloralisiaItems.WITHER_ROSE_PETALS;
+		} else if (state.getBlock() == FloralisiaBlocks.AGAPANTHUS) {
+			drop = FloralisiaItems.AGAPANTHUS_PETALS;
+		} else if (state.getBlock() == FloralisiaBlocks.ANASTASIA) {
+			drop = FloralisiaItems.ANASTASIA_PETALS;
+		} else if (state.getBlock() == FloralisiaBlocks.CALLA_LILY) {
+			drop = FloralisiaItems.CALLA_LILY_PETALS;
+		} else if (state.getBlock() == FloralisiaBlocks.CROCUS) {
+			drop = FloralisiaItems.CROCUS_PETALS;
+		} else if (state.getBlock() == FloralisiaBlocks.CYAN_ROSE) {
+			drop = FloralisiaItems.CYAN_ROSE_PETALS;
+		} else if (state.getBlock() == FloralisiaBlocks.CYMBIDIUM) {
+			drop = FloralisiaItems.CYMBIDIUM_PETALS;
+		} else if (state.getBlock() == FloralisiaBlocks.GLADIOLUS) {
+			drop = FloralisiaItems.GLADIOLUS_PETALS;
 		} else {
 			return false;
 		}

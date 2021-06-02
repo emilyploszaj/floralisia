@@ -15,5 +15,6 @@ public class FloralisiaRenderLayers {
 		BlockRenderLayerMap.INSTANCE.putBlock(FloralisiaBlocks.CYMBIDIUM, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(FloralisiaBlocks.AMETHYST_REVIBRATOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(FloralisiaBlocks.RANDOMIZER, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(FloralisiaBlocks.FLAX, RenderLayer.getCutout());
 	}
 }

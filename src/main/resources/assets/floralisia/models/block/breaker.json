@@ -1,1 +1,8 @@
-{    "parent": "block/cube_all",    "textures": {        "all": "floralisia:block/breaker"    }}
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "floralisia:block/breaker_top",
+        "front": "floralisia:block/breaker_front",
+        "side": "floralisia:block/breaker_side"
+    }
+}

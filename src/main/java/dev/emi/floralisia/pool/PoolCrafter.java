@@ -7,7 +7,6 @@ import dev.emi.floralisia.entity.PoolCraftingEntity;
 import dev.emi.floralisia.recipe.FloralisiaIngredient;
 import dev.emi.floralisia.recipe.FloralisiaRecipe;
 import dev.emi.floralisia.recipe.FloralisiaRecipeType;
-import dev.emi.floralisia.registry.FloralisiaEntities;
 import net.fabricmc.fabric.mixin.tag.extension.AccessorFluidTags;
 import net.minecraft.block.Block;
 import net.minecraft.entity.ItemEntity;
@@ -99,6 +98,7 @@ public class PoolCrafter {
 		Box box = new Box(new BlockPos(minX, pos.getY(), minZ), new BlockPos(maxX, pos.getY() + 1.0F, maxZ));
 		List<ItemEntity> ingredients = world.getEntitiesByClass(ItemEntity.class, box, stack -> true);
 		outer: for (FloralisiaRecipe recipe : world.getRecipeManager().listAllOfType(FloralisiaRecipeType.POOL)) {
+			System.out.println("hi");
 			if (!flowers.containsAll(recipe.flowers)) {
 				continue;
 			}
@@ -117,14 +117,15 @@ public class PoolCrafter {
 				}
 				continue outer;
 			}
+			System.out.println("hi");
 			if (!world.isClient) {
 				for (int i = 0; i < used.size(); i++) {
 					used.get(i).getStack().decrement(usedCount.get(i));
 				}
-				PoolCraftingEntity entity = new PoolCraftingEntity(FloralisiaEntities.POOL_CRAFTING_ENTITY, world);
+				PoolCraftingEntity entity = new PoolCraftingEntity(world);
 				entity.setPos(minX + (maxX - minX) / 2.0F + 0.5F, pos.getY() + 1.5F, minZ + (maxZ - minZ) / 2.0F + 0.5F);
+				entity.setRecipe(recipe);
 				entity.duration = 20;
-				entity.results = recipe.outputs;
 				world.spawnEntity(entity);
 			}
 			return true;

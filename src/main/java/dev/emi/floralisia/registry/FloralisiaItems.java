@@ -3,6 +3,7 @@ package dev.emi.floralisia.registry;
 import dev.emi.floralisia.FloralisiaMain;
 import dev.emi.floralisia.item.AmethystClippers;
 import dev.emi.floralisia.item.AmethystFertilizer;
+import dev.emi.floralisia.item.AmethystPickaxe;
 import dev.emi.floralisia.item.AmethystStarter;
 import dev.emi.floralisia.item.BottomlessWaterBucket;
 import dev.emi.floralisia.item.CreeperCharm;
@@ -10,6 +11,7 @@ import dev.emi.floralisia.item.DustOfWilting;
 import dev.emi.floralisia.item.RingOfSafeguarding;
 import dev.emi.floralisia.item.VoidBag;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -51,22 +53,20 @@ public class FloralisiaItems {
 	public static final Item UNFIRED_CLAY_BOTTLE = register("unfired_clay_bottle", new Item(new Item.Settings()));
 	public static final Item CLAY_BOTTLE = register("clay_bottle", new Item(new Item.Settings()));
 
-	// X passive: bookshelves (like enchantment tables)
+	// X	passive: bookshelves (like enchantment tables)
 	// active: brewing?
 	// player: nearby enchantment
 	public static final Item ESSENCE_OF_ARCANA = register("essence_of_arcana", new Item(new Item.Settings()));
 	public static final Item ESSENCE_OF_ATTACHMENT = register("essence_of_attachment", new Item(new Item.Settings()));
-	// consumption: "random" blocks or items, greatly losing efficiency if it gets a
-	// repeat
+	// X	consumption: "random" blocks or items, greatly losing efficiency if it gets a repeat
 	public static final Item ESSENCE_OF_CHAOS = register("essence_of_chaos", new Item(new Item.Settings()));
-	// active: destroying blocks (this is kinda simple)
+	// X	active: destroying blocks (this is kinda simple)
 	public static final Item ESSENCE_OF_DESTRUCTION = register("essence_of_destruction", new Item(new Item.Settings()));
-	// X passive: (active?) creation of stone blocks in the world (cobble, stone,
-	// basalt)
+	// X	passive: (active?) creation of stone blocks in the world (cobble, stone, basalt)
 	// active: processing of ores? but how does this become renewable?
 	public static final Item ESSENCE_OF_EARTH = register("essence_of_earth", new Item(new Item.Settings()));
 	// active: nearby smelting
-	// active: nearby auto crafting
+	// X	active: nearby auto crafting
 	public static final Item ESSENCE_OF_FABRICATION = register("essence_of_fabrication", new Item(new Item.Settings()));
 	// passive: nearby crop growth (maybe this is active?)
 	// active: bone meal usage
@@ -75,36 +75,43 @@ public class FloralisiaItems {
 	// passive: lava drip
 	// passive: infinite fire
 	// passive: nearyby furnace
-	// X active: fire removing a block
+	// X	active: fire removing a block
 	public static final Item ESSENCE_OF_HEAT = register("essence_of_heat", new Item(new Item.Settings()));
 	// passive: floating items, bubble columns
 	public static final Item ESSENCE_OF_LEVITY = register("essence_of_levity", new Item(new Item.Settings()));
 	// passive: nearby light source
 	// passive: lightning strikes?
 	public static final Item ESSENCE_OF_LIGHT = register("essence_of_light", new Item(new Item.Settings()));
-	// consumption: "orderly" blocks or items, like chiselled blocks
+	// X	consumption: "orderly" blocks or items, like chiselled blocks
 	public static final Item ESSENCE_OF_ORDER = register("essence_of_order", new Item(new Item.Settings()));
-	// consumption: "pure" blocks or items, like glass
+	// X	consumption: "pure" blocks or items, like glass
 	public static final Item ESSENCE_OF_PURITY = register("essence_of_purity", new Item(new Item.Settings()));
+	// X	active: breaking a tool (only in breakers at the moment)
 	public static final Item ESSENCE_OF_RESILIENCE = register("essence_of_resilience", new Item(new Item.Settings()));
 	public static final Item ESSENCE_OF_STABILITY = register("essence_of_stability", new Item(new Item.Settings()));
-	// perhaps force players to "transmutate" other flowers into this one, rather
-	// than following the mold
-	public static final Item ESSENCE_OF_TRANSMUTATION = register("essence_of_transmutation",
-			new Item(new Item.Settings()));
+	// X	perhaps force players to "transmutate" other flowers into this one, rather
+	// 		than following the mold
+	public static final Item ESSENCE_OF_TRANSMUTATION = register("essence_of_transmutation", new Item(new Item.Settings()));
 	// passive: dripstone
-	// X active: splash water bottles
+	// X	active: splash water bottles
 	// player: drinking?
 	public static final Item ESSENCE_OF_WATER = register("essence_of_water", new Item(new Item.Settings()));
 
 	public static final Item PETAL_ASH = register("petal_ash", new Item(new Item.Settings()));
 
+	public static final Item FLAX_SEEDS = register("flax_seeds", new AliasedBlockItem(FloralisiaBlocks.FLAX, new Item.Settings()));
+	public static final Item FLAX_FLOWER = register("flax_flower", new Item(new Item.Settings()));
+	public static final Item FLAX = register("flax", new Item(new Item.Settings()));
+	public static final Item TWINE = register("twine", new Item(new Item.Settings()));
+	public static final Item LINEN = register("linen", new Item(new Item.Settings()));
+
 	// Consumables
-	public static final Item AMETHYST_FERTILIZER = register("amethyst_fertilizer",
-			new AmethystFertilizer(new Item.Settings()));
+	public static final Item AMETHYST_FERTILIZER = register("amethyst_fertilizer", new AmethystFertilizer(new Item.Settings()));
 	public static final Item DUST_OF_WILTING = register("dust_of_wilting", new DustOfWilting(new Item.Settings()));
 
 	// Tools
+	public static final Item AMETHYST_PICKAXE =
+		register("amethyst_pickaxe", new AmethystPickaxe(new Item.Settings().maxCount(1).maxDamage(200)));
 	public static final Item AMETHYST_CLIPPERS = FloralisiaMain.config.amethystClipperDurability
 			? register("amethyst_clippers", new AmethystClippers(new Item.Settings().maxCount(1).maxDamage(200)))
 			: register("amethyst_clippers", new AmethystClippers(new Item.Settings().maxCount(1)));
@@ -113,10 +120,9 @@ public class FloralisiaItems {
 			: register("amethyst_starter", new AmethystStarter(new Item.Settings().maxCount(1)));
 
 	public static final Item VOID_BAG = register("void_bag", new VoidBag(new Item.Settings().maxCount(1)));
-	public static final Item CREEPER_CHARM = register("creeper_charm",
-			new CreeperCharm(new Item.Settings().maxCount(1).maxDamage(1)));
+	public static final Item CREEPER_CHARM = register("creeper_charm", new CreeperCharm(new Item.Settings().maxCount(1).maxDamage(1)));
 	public static final Item RING_OF_SAFEGUARDING = register("ring_of_safeguarding",
-			new RingOfSafeguarding(new Item.Settings().maxCount(1).maxDamage(1)));
+		new RingOfSafeguarding(new Item.Settings().maxCount(1).maxDamage(1)));
 	public static final Item REPROXY_GLOVE = register("reproxy_glove", new Item(new Item.Settings().maxCount(1)));
 	public static final Item AMETHYST_MONOCLE = register("amethyst_monocle", new Item(new Item.Settings().maxCount(1)));
 

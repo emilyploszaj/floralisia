@@ -1,5 +1,7 @@
 package dev.emi.floralisia.recipe;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
@@ -16,6 +18,7 @@ public class FloralisiaRecipe implements Recipe<Inventory> {
     public FloralisiaRecipeSerializer serializer;
 	public DefaultedList<FloralisiaIngredient> ingredients = DefaultedList.of();
 	public DefaultedList<ItemStack> outputs = DefaultedList.of();
+    public List<Identifier> lootTables;
 	public DefaultedList<Block> flowers = DefaultedList.of();
 	public int minimumFlowers = 0;
 
@@ -38,17 +41,17 @@ public class FloralisiaRecipe implements Recipe<Inventory> {
     }
 
     @Override
-    public ItemStack craft(Inventory inv) { //Unused
+    public ItemStack craft(Inventory inv) { // Unused
         return null;
     }
 
     @Override
-    public boolean fits(int var1, int var2) { //Unused
+    public boolean fits(int var1, int var2) { // Unused
         return false;
     }
 
     @Override
-	public ItemStack getOutput() { //Only returns the first output, fine for machines that only have a single output
+	public ItemStack getOutput() { // Only returns the first output, fine for machines that only have a single output
 		if (outputs.size() == 0) return ItemStack.EMPTY;
         return outputs.get(0);
     }

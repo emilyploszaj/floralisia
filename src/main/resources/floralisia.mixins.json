@@ -14,6 +14,10 @@
     "monocle.RedstoneWireBlockMixin",
     "monocle.WeightedPressurePlateBlockMixin",
 
+    "FixPatchouli",
+    "FixPatchouli2",
+
+    "AbstractBlockMixin",
     "BuddingAmethystBlockMixin",
     "CreeperEntityMixin",
     "EnchantmentTargetBreakableMixin",
@@ -30,6 +34,7 @@
     "PlantBlockMixin",
     "PlayerEntityMixin",
     "PlayerInventoryMixin",
+    "PlayerListEntryMixin",
     "PotionEntityMixin",
     "WiltMixin"
   ],

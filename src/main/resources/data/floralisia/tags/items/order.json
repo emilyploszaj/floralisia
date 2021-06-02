@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:chiseled_stone_bricks",
+    "minecraft:polished_granite",
+    "minecraft:polished_diorite",
+    "minecraft:polished_andesite",
+    "minecraft:polished_deepslate",
+    "minecraft:chiseled_sandstone",
+    "minecraft:chiseled_red_sandstone",
+    "minecraft:clay",
+    "minecraft:clay_ball",
+    "minecraft:chiseled_deepslate",
+    "minecraft:chiseled_nether_bricks",
+    "minecraft:chiseled_quartz_block",
+    "minecraft:chiseled_polished_blackstone"
+  ]
+}

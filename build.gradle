@@ -1,10 +1,10 @@
 plugins {
-	id 'fabric-loom' version '0.7-SNAPSHOT'
+	id 'fabric-loom' version '0.8-SNAPSHOT'
 	id 'maven-publish'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.toVersion(16)
+targetCompatibility = JavaVersion.toVersion(16)
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
@@ -16,28 +16,38 @@ minecraft {
 repositories {
 	mavenCentral()
 	maven {
+		name = 'Ladysnake Mods'
+		url = 'https://ladysnake.jfrog.io/artifactory/mods'
+	}
+	maven {
 		url = "https://jitpack.io"
 	}
 	maven {
 		name = "NerdHubMC"
 		url = "https://maven.abusedmaster.xyz/"
-	}
+	}/*
 	maven {
 		url 'https://maven.blamejared.com'
-	}
+	}*/
 }
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modCompile "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	
 	//modImplementation "vazkii.patchouli:Patchouli:1.16.4-48-FABRIC"
 
 	modImplementation "com.github.emilyalexandra:trinkets:20c930ec2a"
 
 	modImplementation "com.github.emilyalexandra:Patchouli:5ce3bb0362"
+
+	// Fix outdated trinkets version
+	modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:3.0.0-nightly.21w19a"
+	include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:3.0.0-nightly.21w19a"
+	modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:3.0.0-nightly.21w19a"
+	include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:3.0.0-nightly.21w19a"
 
 	include "blue.endless:jankson:1.1.0"
 }

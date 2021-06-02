@@ -9,7 +9,7 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 public class FloralisiaEntityRenderers {
 
 	public static void init() {
-		EntityRendererRegistry.INSTANCE.register(FloralisiaEntities.POOL_CRAFTING_ENTITY, new EntityRendererFactory<PoolCraftingEntity>() {
+		EntityRendererRegistry.INSTANCE.register(FloralisiaEntities.POOL, new EntityRendererFactory<PoolCraftingEntity>() {
 
 			@Override
 			public EntityRenderer<PoolCraftingEntity> create(Context ctx) {

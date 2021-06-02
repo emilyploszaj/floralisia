@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "north": "floralisia:block/chute_front",
+    "all": "minecraft:block/furnace_top"
+  }
+}

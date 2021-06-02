@@ -2,7 +2,9 @@ package dev.emi.floralisia.block.entity;
 
 import dev.emi.floralisia.FloralisiaMain;
 import dev.emi.floralisia.block.BreakerBlock;
+import dev.emi.floralisia.block.EnchantedGrass;
 import dev.emi.floralisia.registry.FloralisiaBlockEntities;
+import dev.emi.floralisia.util.EssenceType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -51,8 +53,8 @@ public class BreakerBlockEntity extends BlockEntity implements SidedInventory {
 	private void serverTick(World world, BlockPos pos, BlockState state) {
 		BlockPos interactPos = pos.offset(state.get(BreakerBlock.FACING));
 		BlockState mineState = world.getBlockState(interactPos);
-		if (!mineState.isAir()) {
-			ItemStack tool = stacks.get(0);
+		ItemStack tool = stacks.get(0);
+		if (!mineState.isAir() && !tool.isEmpty()) {
 			if (!mineState.equals(lastState) || !tool.equals(lastStack)) {
 				lastState = mineState;
 				lastStack = tool;
@@ -80,9 +82,11 @@ public class BreakerBlockEntity extends BlockEntity implements SidedInventory {
 					BlockEntity blockEntity = mineState.hasBlockEntity() ? world.getBlockEntity(pos) : null;
 					Block.dropStacks(mineState, world, interactPos, blockEntity, null, tool);
 				}
+				EnchantedGrass.spreadFlowers(this.getWorld(), interactPos, EssenceType.DESTRUCTION, 0.05f, 0);
 				tool.damage(FloralisiaMain.config.breakerDamageMultiplier, world.random, null);
 				if (tool.getDamage() > tool.getMaxDamage()) {
 					stacks.set(0, ItemStack.EMPTY);
+					EnchantedGrass.spreadFlowers(this.getWorld(), interactPos, EssenceType.RESILIENCE, 0.8f, 0);
 				}
 			}
 			world.setBlockBreakingInfo(-1, interactPos, (int) (breakProgress * 10) - 1);

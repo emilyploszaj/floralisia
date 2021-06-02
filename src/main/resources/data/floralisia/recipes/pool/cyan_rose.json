@@ -18,13 +18,13 @@
 	],
 	"flowers": [
 		{
-			"block": "minecraft:dandelion"
+			"block": "minecraft:cornflower"
 		},
 		{
-			"block": "minecraft:poppy"
+			"block": "floralisia:anastasia"
 		},
 		{
-			"block": "minecraft:white_tulip"
+			"block": "floralisia:gladiolus"
 		}
 	],
 	"minimumflowers": 8

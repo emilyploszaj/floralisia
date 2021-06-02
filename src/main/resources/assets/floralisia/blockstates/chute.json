@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "floralisia:block/chute"
+    },
+    "facing=east": {
+      "model": "floralisia:block/chute",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "floralisia:block/chute",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "floralisia:block/chute",
+      "y": 270
+    },
+    "facing=down": {
+      "model": "floralisia:block/chute",
+      "x": 90
+    }
+  }
+}

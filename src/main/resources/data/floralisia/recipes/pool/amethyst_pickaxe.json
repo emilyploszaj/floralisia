@@ -1,0 +1,25 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:iron_pickaxe"
+		},
+		{
+			"item": "minecraft:amethyst_shard"
+		},
+		{
+			"item": "floralisia:essence_of_resilience"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:amethyst_pickaxe"
+		}
+	],
+	"flowers": [
+		{
+			"block": "floralisia:calla_lily"
+		}
+	],
+	"minimumflowers": 6
+}

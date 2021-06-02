@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" ST",
+		"S T",
+		" ST"
+	],
+	"key": {
+		"S": {
+			"item": "minecraft:stick"
+		},
+		"T": {
+			"item": "floralisia:twine"
+		}
+	},
+	"result": {
+		"item": "minecraft:bow",
+		"count": 1
+	}
+}

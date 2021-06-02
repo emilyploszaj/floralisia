@@ -1,1 +1,26 @@
-{    "variants": {        "": { "model": "floralisia:block/breaker" }    }}
+{
+  "variants": {
+    "facing=north": {
+      "model": "floralisia:block/breaker"
+    },
+    "facing=east": {
+      "model": "floralisia:block/breaker",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "floralisia:block/breaker",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "floralisia:block/breaker",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "floralisia:block/breaker_vertical"
+    },
+    "facing=down": {
+      "model": "floralisia:block/breaker_vertical",
+      "x": 180
+    }
+  }
+}

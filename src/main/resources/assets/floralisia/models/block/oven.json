@@ -1,1 +1,12 @@
-{    "parent": "block/cube_all",    "textures": {        "all": "floralisia:block/oven"    }}
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "up": "floralisia:block/oven_1",
+        "south": "floralisia:block/oven_2",
+        "east": "floralisia:block/oven_3",
+        "north": "floralisia:block/oven_4",
+        "west": "floralisia:block/oven_5",
+        "down": "floralisia:block/oven_6",
+        "particle": "floralisia:block/oven_6"
+    }
+}

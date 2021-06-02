@@ -1,5 +1,8 @@
 package dev.emi.floralisia.recipe;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mojang.datafixers.util.Function3;
@@ -35,7 +38,7 @@ public class FloralisiaRecipeSerializer implements RecipeSerializer<FloralisiaRe
 		try {
 			FloralisiaRecipe recipe = constructor.apply(name, type, this);
 			recipe.ingredients = deserializeInput(JsonHelper.getArray(json, "ingredients"));
-			recipe.outputs = deserializeOutput(JsonHelper.getArray(json, "results"));
+			deserializeOutput(recipe, JsonHelper.getArray(json, "results"));
 			if (type == FloralisiaRecipeType.POOL) {
 				recipe.flowers = deserializeFlowers(JsonHelper.getArray(json, "flowers"));
 				recipe.minimumFlowers = json.get("minimumflowers").getAsInt();
@@ -69,10 +72,15 @@ public class FloralisiaRecipeSerializer implements RecipeSerializer<FloralisiaRe
 		return ingredients;
 	}
 
-	public static DefaultedList<ItemStack> deserializeOutput(JsonArray array) {
+	public static void deserializeOutput(FloralisiaRecipe recipe, JsonArray array) {
 		DefaultedList<ItemStack> stacks = DefaultedList.of();
+		List<Identifier> lootTables = new ArrayList<>();
 		for (int i = 0; i < array.size(); i++) {
 			JsonObject json = array.get(i).getAsJsonObject();
+			if (json.has("loot_table")) {
+				lootTables.add(new Identifier(JsonHelper.getString(json, "loot_table")));
+				continue;
+			}
 			Identifier identifier = new Identifier(JsonHelper.getString(json, "item"));
 			Item item = Registry.ITEM.get(identifier);
 			int count = 1;
@@ -89,7 +97,8 @@ public class FloralisiaRecipeSerializer implements RecipeSerializer<FloralisiaRe
 			}
 			stacks.add(stack);
 		}
-		return stacks;
+		recipe.outputs = stacks;
+		recipe.lootTables = lootTables;
 	}
 	
 	public static DefaultedList<Block> deserializeFlowers(JsonArray array) {

@@ -11,8 +11,8 @@ import net.minecraft.block.Blocks;
 public enum EssenceType {
 	ARCANA(Blocks.CORNFLOWER),
 	ATTACHMENT(Blocks.ALLIUM),
-	CHAOS(),
-	DESTRUCTION(Blocks.WITHER_ROSE),
+	CHAOS(FloralisiaBlocks.CROCUS),
+	DESTRUCTION(Blocks.WITHER_ROSE, FloralisiaBlocks.CALLA_LILY),
 	EARTH(FloralisiaBlocks.CYMBIDIUM),
 	FABRICATION(Blocks.ORANGE_TULIP),
 	GROWTH(FloralisiaBlocks.GLADIOLUS),
@@ -22,7 +22,7 @@ public enum EssenceType {
 	ORDER(Blocks.WHITE_TULIP, Blocks.AZURE_BLUET, Blocks.OXEYE_DAISY),
 	PURITY(Blocks.LILY_OF_THE_VALLEY),
 	RESILIENCE(FloralisiaBlocks.ANASTASIA),
-	STABILITY(),
+	STABILITY(FloralisiaBlocks.AGAPANTHUS),
 	TRANSMUTATION(FloralisiaBlocks.CYAN_ROSE),
 	WATER(Blocks.BLUE_ORCHID);
 

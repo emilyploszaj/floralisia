@@ -11,7 +11,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class OvenScreen extends HandledScreen<OvenScreenHandler>{
+public class OvenScreen extends HandledScreen<OvenScreenHandler> {
 	private static final Identifier TEXTURE = new Identifier("floralisia", "textures/gui/container/oven.png");
 
 	public OvenScreen(OvenScreenHandler handler, PlayerInventory inventory, Text title) {
@@ -33,7 +33,7 @@ public class OvenScreen extends HandledScreen<OvenScreenHandler>{
 		int x = (this.width - this.backgroundWidth) / 2;
 		int y = (this.height - this.backgroundHeight) / 2;
 		this.drawTexture(matrices, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight);
-		PropertyDelegate propertyDelegate = ((OvenScreenHandler) handler).propertyDelegate;
+		PropertyDelegate propertyDelegate = this.handler.propertyDelegate;
 		if (propertyDelegate.get(0) > 0) {
 			int i = propertyDelegate.get(1);
 			if (i == 0) {

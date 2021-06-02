@@ -56,12 +56,19 @@
 	"item.floralisia.gladiolus_petals": "Gladiolus Petals",
 	
 	"item.floralisia.amethyst_fertilizer": "Amethyst Fertilizer",
+	"item.floralisia.amethyst_pickaxe": "Amethyst Pickaxe",
 	"item.floralisia.amethyst_clippers": "Amethyst Clippers",
 	"item.floralisia.amethyst_starter": "Amethyst Starter",
 	"item.floralisia.unfired_clay_bottle": "Unfired Clay Bottle",
 	"item.floralisia.clay_bottle": "Clay Bottle",
 	"item.floralisia.petal_ash": "Petal Ash",
 	"item.floralisia.dewmetal_ingot": "Dewmetal Ingot",
+
+	"item.floralisia.flax_seeds": "Flax Seeds",
+	"item.floralisia.flax": "Flax",
+	"item.floralisia.flax_flower": "Flax Flower",
+	"item.floralisia.linen": "Linen",
+	"item.floralisia.twine": "Twine",
 
 	"item.floralisia.void_bag": "Sac of Voiding",
 	"item.floralisia.ring_of_safeguarding": "Ring of Safeguarding",

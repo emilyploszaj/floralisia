@@ -27,6 +27,17 @@ public class EnchantedGrass extends Block implements BlockEntityProvider {
 	}
 
 	@Override
+	public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
+		super.neighborUpdate(state, world, pos, block, fromPos, notify);
+		if (fromPos.equals(pos.up())) {
+			BlockEntity be = world.getBlockEntity(pos);
+			if (be instanceof EnchantedGrassBlockEntity) {
+				((EnchantedGrassBlockEntity) be).updateFlower();
+			}
+		}
+	}
+
+	@Override
 	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
 		return new EnchantedGrassBlockEntity(pos, state);
 	}
@@ -63,40 +74,4 @@ public class EnchantedGrass extends Block implements BlockEntityProvider {
 			}
 		}
 	}
-
-	/*
-	@Override
-	public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
-		return world.getBlockState(pos.up()).isAir();
-	}
-
-	@Override
-	public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-		return true;
-	}
-
-	@Override
-	public void grow(ServerWorld world, Random random, BlockPos origin, BlockState state) {
-		List<BlockPos> seeds = Lists.newArrayList();
-		BlockPos.Mutable pos = new BlockPos.Mutable();
-		for (int x = -9; x < 10; x++) {
-			for (int y = 0; y < 3; y++) {
-				for (int z = -9; z < 10; z++) {
-					pos.set(origin.getX() + x, origin.getY() + y, origin.getZ() + z);
-					if (world.getBlockState(pos).getBlock() instanceof FlowerBlock) {
-						seeds.add(pos.mutableCopy());
-					}
-				}
-			}
-		}
-		if (seeds.size() == 0) return;
-		for (int i = 0; i < 32; i++) {
-			pos.set(origin.getX() + random.nextInt(15) - 7, origin.getY() + random.nextInt(3), origin.getZ() + random.nextInt(15) - 7);
-			if (!world.isAir(pos)) continue;
-			BlockState flower = world.getBlockState(seeds.get(random.nextInt(seeds.size())));
-			if (flower.canPlaceAt(world, pos) && world.getBlockState(pos.down()).getBlock() == FloralisiaBlocks.ENCHANTED_GRASS) {
-				world.setBlockState(pos, flower);
-			}
-		}
-	}*/
 }

@@ -1,0 +1,30 @@
+{
+    "name": "Orange Tulip",
+    "icon": "minecraft:orange_tulip",
+	"category": "flora",
+	"sortnum": 0,
+    "pages": [
+		{
+			"type": "spotlight",
+			"item": "minecraft:orange_tulip",
+			"text": "The orange tulip is a crafty flower drawn to creation."
+		},
+		{
+			"type": "oven_recipe",
+			"headertext": "Essence Recipe",
+			"recipe": "floralisia:oven/essence_of_fabrication"
+		},
+		{
+			"type": "spotlight",
+			"item": "floralisia:enchanted_grass",
+			"title": "Spreading",
+			"text": "The orange tulip loves nothing more than to be a spectator to a meticulously designed contraption for crafting items. Nearby crafters responsible for crafting items will encourage an orange tulip to spread, perhaps this is its way of declaring that such marvels of technology deserve an audience?"
+		},
+		{
+			"type": "crafting",
+			"headertext": "Orange Dye",
+			"recipe": "minecraft:orange_dye_from_orange_tulip",
+			"text": "The orange tulip can also be crafted into orange dye, providing a renewable source to a floralist with a sharp mind."
+		}
+    ]
+}

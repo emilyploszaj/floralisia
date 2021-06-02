@@ -1,0 +1,7 @@
+{
+    "parent": "block/orientable_vertical",
+    "textures": {
+        "front": "floralisia:block/breaker_front_vertical",
+        "side": "floralisia:block/breaker_top"
+    }
+}

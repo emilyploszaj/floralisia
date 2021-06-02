@@ -2,7 +2,9 @@ package dev.emi.floralisia.block.entity;
 
 import java.util.List;
 
+import dev.emi.floralisia.block.EnchantedGrass;
 import dev.emi.floralisia.registry.FloralisiaBlockEntities;
+import dev.emi.floralisia.util.EssenceType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -150,6 +152,7 @@ public class CrafterBlockEntity extends BlockEntity implements SidedInventory {
 				craftingInv.setStack(i, remainders.get(i));
 			}
 		}
+		EnchantedGrass.spreadFlowers(getWorld(), pos, EssenceType.FABRICATION, 0.05f, 0);
 		updateInsertSlot();
 		this.markDirty();
 	}

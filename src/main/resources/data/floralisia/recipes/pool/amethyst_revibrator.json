@@ -1,0 +1,29 @@
+{
+	"type": "floralisia:pool",
+	"ingredients":[
+		{
+			"item": "minecraft:amethyst_cluster"
+		},
+		{
+			"item": "minecraft:redstone"
+		},
+		{
+			"item": "floralisia:essence_of_destruction"
+		}
+	],
+	"results": [
+		{
+			"item": "floralisia:amethyst_revibrator",
+			"count": 1
+		}
+	],
+	"flowers": [
+		{
+			"block": "floralisia:gladiolus"
+		},
+		{
+			"block": "floralisia:calla_lily"
+		}
+	],
+	"minimumflowers": 8
+}

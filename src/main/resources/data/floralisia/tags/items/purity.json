@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:glass",
+    "minecraft:white_dye",
+    "minecraft:paper",
+    "minecraft:quartz",
+    "minecraft:glass_pane",
+    "minecraft:glass_bottle"
+  ]
+}
